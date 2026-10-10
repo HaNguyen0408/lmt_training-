@@ -1,0 +1,26 @@
+{
+  "name": "lmt-training-platform",
+  "version": "2.0.0",
+  "description": "Nền tảng đào tạo & coaching doanh nghiệp thực chiến LMT Training - Tích hợp Database & REST API",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "lmt-training",
+    "railway",
+    "github",
+    "database",
+    "lead-management"
+  ],
+  "author": "Lê Minh Triết",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

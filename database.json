@@ -1,0 +1,38 @@
+[
+  {
+    "id": "LMT-LEAD-001",
+    "fullName": "Nguyễn Minh Tuấn",
+    "company": "Công ty CP Sản xuất May mặc Tân Bình",
+    "phone": "0918123456",
+    "email": "tuan.nguyen@tanbinhgarment.vn",
+    "course": "Quản Lý Cơ Bản và Quản Lý Chuyên Sâu",
+    "headcount": 25,
+    "notes": "Muốn đào tạo nâng cao kỹ năng giao việc và đánh giá cho đội ngũ quản lý xưởng may.",
+    "createdAt": "2026-10-10T08:30:00.000Z",
+    "status": "Chờ tư vấn"
+  },
+  {
+    "id": "LMT-LEAD-002",
+    "fullName": "Trần Thị Mai Phương",
+    "company": "Tập đoàn Phân phối Logistics Miền Nam",
+    "phone": "0988765432",
+    "email": "phuong.tran@southernlog.com.vn",
+    "course": "Xây dựng và Quản lý KPI, Thẻ Điểm Cân Bằng (BSC)",
+    "headcount": 15,
+    "notes": "Cần khảo sát 1 ngày thực tế và thiết lập bộ từ điển KPI cho khối kho vận và điều phối xe.",
+    "createdAt": "2026-10-10T09:15:00.000Z",
+    "status": "Đã liên hệ"
+  },
+  {
+    "id": "LMT-LEAD-003",
+    "fullName": "Lê Hoàng Quân",
+    "company": "Công ty TNHH Giải pháp Công nghệ Việt",
+    "phone": "0903998877",
+    "email": "quan.lh@viettechsol.com",
+    "course": "Giao Tiếp & Truyền Tải Thông Tin hiệu quả",
+    "headcount": 30,
+    "notes": "Đào tạo cho toàn bộ kỹ sư và nhân viên kinh doanh về kỹ năng lắng nghe và thuyết trình PREP.",
+    "createdAt": "2026-10-10T10:05:00.000Z",
+    "status": "Đang xếp lịch"
+  }
+]

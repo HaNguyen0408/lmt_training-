@@ -1,0 +1,3161 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LMT TRAINING - Đào Tạo & Coaching Doanh Nghiệp Thực Chiến | Giảng Viên Lê Minh Triết</title>
+  <meta name="description" content="LMT Training - Just about mindset and action. Đào tạo kỹ năng quản lý, kỹ năng mềm thực chiến cho quản lý và nhân viên doanh nghiệp. Giảng viên ThS. Lê Minh Triết.">
+  
+  <style>
+    /* ==========================================================================
+       DESIGN SYSTEM - LMT TRAINING
+       Base Background Color: #DFE9EB (Bảo toàn nguyên bản màu nền Google Sites)
+       Brand Palette: Aristotle Deep Teal (#2B5D68, #19363D), Slate (#516F75), 
+                      Accent Cyan (#53A7B8), Warm Gold (#D4A373, #E76F51)
+       ========================================================================== */
+    :root {
+      --bg-base: #DFE9EB;
+      --bg-surface: #FFFFFF;
+      --bg-surface-alt: #F4F8F9;
+      --bg-card: #FFFFFF;
+      --bg-glass: rgba(255, 255, 255, 0.90);
+      --bg-dark: #19363D;
+      --bg-dark-accent: #234D57;
+      
+      --color-primary: #2B5D68;
+      --color-primary-light: #3D7684;
+      --color-primary-dark: #1B3E46;
+      --color-accent: #53A7B8;
+      --color-accent-hover: #3E8E9F;
+      --color-slate: #516F75;
+      
+      --color-warm-gold: #D4A373;
+      --color-warm-badge: #FFF2CC;
+      --color-warm-text: #855800;
+      
+      --text-main: #1C2B2E;
+      --text-muted: #4F6468;
+      --text-light: #7E9397;
+      --text-white: #FFFFFF;
+      
+      --border-subtle: rgba(43, 93, 104, 0.16);
+      --border-focus: #53A7B8;
+      
+      --shadow-sm: 0 2px 8px rgba(35, 77, 87, 0.06);
+      --shadow-md: 0 8px 24px rgba(35, 77, 87, 0.09);
+      --shadow-lg: 0 16px 40px rgba(35, 77, 87, 0.12);
+      --shadow-hover: 0 20px 48px rgba(35, 77, 87, 0.16);
+      
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 22px;
+      --radius-full: 9999px;
+      
+      --transition-fast: 0.2s ease;
+      --transition-base: 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      background-color: var(--bg-base);
+      color: var(--text-main);
+      font-family: var(--font-family);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Background texture overlay for subtle depth */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: 
+        radial-gradient(circle at 10% 15%, rgba(83, 167, 184, 0.16) 0%, transparent 45%),
+        radial-gradient(circle at 90% 70%, rgba(43, 93, 104, 0.14) 0%, transparent 50%),
+        linear-gradient(135deg, rgba(255, 255, 255, 0.35) 0%, rgba(223, 233, 235, 0.75) 100%);
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font-family: inherit;
+      cursor: pointer;
+      border: none;
+      outline: none;
+    }
+
+    .container {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* HEADER & NAVIGATION */
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(223, 233, 235, 0.94);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-subtle);
+      transition: var(--transition-base);
+    }
+    .header.scrolled {
+      background: rgba(255, 255, 255, 0.96);
+      box-shadow: var(--shadow-sm);
+    }
+    .nav-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 76px;
+    }
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      font-size: 1.35rem;
+      color: var(--color-primary);
+      letter-spacing: 0.5px;
+    }
+    .logo-badge {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 1.15rem;
+      box-shadow: 0 4px 12px rgba(43, 93, 104, 0.25);
+    }
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      list-style: none;
+    }
+    .nav-link {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      transition: var(--transition-fast);
+      padding: 6px 0;
+      position: relative;
+    }
+    .nav-link:hover, .nav-link.active {
+      color: var(--color-primary);
+    }
+    .nav-link.active::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: var(--color-primary);
+      border-radius: 2px;
+    }
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .btn-header-consult {
+      background: var(--color-primary);
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: var(--radius-full);
+      font-weight: 700;
+      font-size: 0.9rem;
+      transition: var(--transition-base);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .btn-header-consult:hover {
+      background: var(--color-primary-light);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(43, 93, 104, 0.25);
+    }
+    .btn-header-admin {
+      background: rgba(43, 93, 104, 0.12);
+      color: var(--color-primary);
+      padding: 10px 16px;
+      border-radius: var(--radius-full);
+      font-weight: 700;
+      font-size: 0.85rem;
+      transition: var(--transition-fast);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .btn-header-admin:hover {
+      background: rgba(43, 93, 104, 0.22);
+    }
+    .mobile-menu-btn {
+      display: none;
+      background: transparent;
+      padding: 8px;
+      color: var(--color-primary);
+    }
+
+    /* HERO SECTION */
+    .hero-section {
+      padding: 64px 0 50px;
+      position: relative;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 48px;
+      align-items: center;
+    }
+    .hero-tagline {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(83, 167, 184, 0.18);
+      color: var(--color-primary-dark);
+      padding: 6px 16px;
+      border-radius: var(--radius-full);
+      font-weight: 700;
+      font-size: 0.88rem;
+      margin-bottom: 20px;
+      border: 1px solid rgba(83, 167, 184, 0.3);
+    }
+    .hero-title {
+      font-size: 2.85rem;
+      font-weight: 900;
+      line-height: 1.22;
+      color: var(--color-primary-dark);
+      margin-bottom: 18px;
+      letter-spacing: -0.5px;
+    }
+    .hero-title span {
+      color: var(--color-primary);
+      position: relative;
+    }
+    .hero-desc {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin-bottom: 28px;
+    }
+    .hero-quote-box {
+      background: var(--bg-surface);
+      border-left: 4px solid var(--color-accent);
+      padding: 18px 22px;
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 32px;
+      font-style: italic;
+      color: var(--color-primary-dark);
+    }
+    .hero-quote-box strong {
+      font-style: normal;
+      display: block;
+      margin-bottom: 4px;
+      color: var(--color-primary);
+    }
+    .hero-cta-group {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .btn-hero-primary {
+      background: var(--color-primary);
+      color: #fff;
+      padding: 14px 28px;
+      border-radius: var(--radius-full);
+      font-weight: 700;
+      font-size: 1rem;
+      transition: var(--transition-base);
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 8px 20px rgba(43, 93, 104, 0.25);
+    }
+    .btn-hero-primary:hover {
+      background: var(--color-primary-light);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 28px rgba(43, 93, 104, 0.32);
+    }
+    .btn-hero-secondary {
+      background: var(--bg-surface);
+      color: var(--color-primary);
+      border: 1px solid var(--border-subtle);
+      padding: 14px 26px;
+      border-radius: var(--radius-full);
+      font-weight: 700;
+      font-size: 1rem;
+      transition: var(--transition-base);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .btn-hero-secondary:hover {
+      background: rgba(255, 255, 255, 0.9);
+      border-color: var(--color-accent);
+      transform: translateY(-2px);
+    }
+
+    /* HERO CARD RIGHT - 4 CONCERNS */
+    .hero-concerns-card {
+      background: var(--bg-surface);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      box-shadow: var(--shadow-md);
+      border: 1px solid var(--border-subtle);
+      position: relative;
+    }
+    .concerns-card-badge {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--color-primary);
+      background: rgba(43, 93, 104, 0.1);
+      padding: 4px 12px;
+      border-radius: var(--radius-full);
+      margin-bottom: 12px;
+    }
+    .concerns-title {
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: var(--color-primary-dark);
+      margin-bottom: 20px;
+      line-height: 1.35;
+    }
+    .concern-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(43, 93, 104, 0.08);
+    }
+    .concern-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+    .concern-number {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--color-primary);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 0.85rem;
+      flex-shrink: 0;
+    }
+    .concern-item.highlight .concern-number {
+      background: #E76F51;
+    }
+    .concern-item.highlight {
+      background: rgba(231, 111, 81, 0.08);
+      border-radius: var(--radius-sm);
+      padding: 12px 14px;
+      border-bottom: none;
+      margin-top: 6px;
+    }
+    .concern-text {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-main);
+    }
+    .concern-sub {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin-top: 2px;
+      display: block;
+    }
+
+    /* STATS STRIP */
+    .stats-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      margin: 44px 0 20px;
+    }
+    .stat-card {
+      background: var(--bg-surface);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border-subtle);
+      transition: var(--transition-base);
+    }
+    .stat-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+    .stat-num {
+      font-size: 2.3rem;
+      font-weight: 900;
+      color: var(--color-primary);
+      line-height: 1.1;
+      margin-bottom: 6px;
+    }
+    .stat-label {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 4px;
+    }
+    .stat-desc {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    /* SECTION SHARED HEADINGS */
+    .section-padding {
+      padding: 70px 0;
+    }
+    .section-header {
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 48px;
+    }
+    .section-subtitle {
+      font-size: 0.85rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--color-accent);
+      margin-bottom: 8px;
+      display: block;
+    }
+    .section-title {
+      font-size: 2.25rem;
+      font-weight: 800;
+      color: var(--color-primary-dark);
+      line-height: 1.3;
+      margin-bottom: 14px;
+    }
+    .section-desc {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+    }
+
+    /* ABOUT INSTRUCTOR SECTION */
+    .about-card-box {
+      background: var(--bg-surface);
+      border-radius: var(--radius-lg);
+      padding: 44px;
+      box-shadow: var(--shadow-md);
+      border: 1px solid var(--border-subtle);
+      display: grid;
+      grid-template-columns: 360px 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+    .instructor-media {
+      text-align: center;
+    }
+    .instructor-portrait-frame {
+      width: 280px;
+      height: 340px;
+      margin: 0 auto 20px;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      border: 4px solid #fff;
+      background: var(--bg-base);
+      position: relative;
+    }
+    .instructor-portrait-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .instructor-meta-name {
+      font-size: 1.6rem;
+      font-weight: 900;
+      color: var(--color-primary-dark);
+      margin-bottom: 4px;
+    }
+    .instructor-meta-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--color-accent);
+    }
+    .instructor-content h4 {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--color-primary);
+      margin: 22px 0 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .instructor-content h4:first-child {
+      margin-top: 0;
+    }
+    .instructor-bio-p {
+      color: var(--text-main);
+      font-size: 0.98rem;
+      margin-bottom: 12px;
+      line-height: 1.65;
+    }
+    .career-timeline-list {
+      list-style: none;
+      margin: 12px 0 20px;
+    }
+    .career-timeline-item {
+      position: relative;
+      padding-left: 24px;
+      margin-bottom: 10px;
+      font-size: 0.95rem;
+      color: var(--text-main);
+    }
+    .career-timeline-item::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 8px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--color-accent);
+    }
+    .career-timeline-item strong {
+      color: var(--color-primary-dark);
+    }
+    .experience-tag-cloud {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 14px;
+    }
+    .exp-tag {
+      background: rgba(43, 93, 104, 0.09);
+      color: var(--color-primary-dark);
+      padding: 6px 14px;
+      border-radius: var(--radius-full);
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    /* PARTNERS & CLIENTS */
+    .partners-section {
+      background: rgba(255, 255, 255, 0.5);
+      border-top: 1px solid var(--border-subtle);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .client-categories {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+    }
+    .client-category-card {
+      background: var(--bg-surface);
+      border-radius: var(--radius-md);
+      padding: 28px;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border-subtle);
+    }
+    .client-cat-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 18px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--border-subtle);
+    }
+    .client-cat-header h3 {
+      font-size: 1.18rem;
+      font-weight: 800;
+      color: var(--color-primary-dark);
+    }
+    .client-item-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+    .client-chip {
+      background: var(--bg-surface-alt);
+      padding: 10px 14px;
+      border-radius: var(--radius-sm);
+      border: 1px solid rgba(43, 93, 104, 0.1);
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .client-chip-name {
+      font-weight: 700;
+      font-size: 0.88rem;
+      color: var(--color-primary-dark);
+    }
+    .client-chip-topic {
+      font-size: 0.78rem;
+      color: var(--color-slate);
+    }
+
+    /* TRAINING ACTIVITY GALLERY */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+    .gallery-item {
+      position: relative;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      height: 220px;
+      box-shadow: var(--shadow-sm);
+      cursor: pointer;
+      background: #000;
+    }
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+      display: block;
+    }
+    .gallery-item:hover img {
+      transform: scale(1.08);
+      opacity: 0.9;
+    }
+    .gallery-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      padding: 20px 14px 12px;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
+      color: #fff;
+      font-size: 0.82rem;
+      font-weight: 600;
+      pointer-events: none;
+    }
+
+    /* COURSES SECTION */
+    .filter-tabs-wrapper {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 28px;
+      flex-wrap: wrap;
+    }
+    .filter-tab {
+      background: var(--bg-surface);
+      color: var(--text-muted);
+      border: 1px solid var(--border-subtle);
+      padding: 10px 22px;
+      border-radius: var(--radius-full);
+      font-weight: 700;
+      font-size: 0.95rem;
+      transition: var(--transition-fast);
+    }
+    .filter-tab:hover {
+      color: var(--color-primary);
+      border-color: var(--color-accent);
+    }
+    .filter-tab.active {
+      background: var(--color-primary);
+      color: #fff;
+      border-color: var(--color-primary);
+      box-shadow: 0 4px 12px rgba(43, 93, 104, 0.2);
+    }
+    .search-box-wrapper {
+      max-width: 540px;
+      margin: 0 auto 40px;
+      position: relative;
+    }
+    .search-input {
+      width: 100%;
+      padding: 14px 20px 14px 48px;
+      border-radius: var(--radius-full);
+      border: 1px solid var(--border-subtle);
+      background: var(--bg-surface);
+      font-size: 0.95rem;
+      box-shadow: var(--shadow-sm);
+      outline: none;
+      transition: var(--transition-fast);
+    }
+    .search-input:focus {
+      border-color: var(--color-accent);
+      box-shadow: 0 0 0 3px rgba(83, 167, 184, 0.2);
+    }
+    .search-icon {
+      position: absolute;
+      left: 18px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-light);
+      pointer-events: none;
+    }
+
+    .courses-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .course-card {
+      background: var(--bg-surface);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border-subtle);
+      display: flex;
+      flex-direction: column;
+      transition: var(--transition-base);
+      cursor: pointer;
+    }
+    .course-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-hover);
+      border-color: rgba(83, 167, 184, 0.4);
+    }
+    .course-card-body {
+      padding: 24px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .course-meta-strip {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+    .target-badge {
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      padding: 4px 10px;
+      border-radius: var(--radius-full);
+    }
+    .badge-manager {
+      background: rgba(43, 93, 104, 0.12);
+      color: var(--color-primary);
+    }
+    .badge-staff {
+      background: rgba(83, 167, 184, 0.18);
+      color: #246B78;
+    }
+    .badge-hr {
+      background: rgba(212, 163, 115, 0.22);
+      color: #855800;
+    }
+    .course-duration-badge {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--color-slate);
+    }
+    .course-title {
+      font-size: 1.22rem;
+      font-weight: 800;
+      color: var(--color-primary-dark);
+      line-height: 1.35;
+      margin-bottom: 10px;
+    }
+    .course-desc {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+      margin-bottom: 18px;
+      flex: 1;
+    }
+    .course-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 18px;
+    }
+    .course-tag {
+      background: var(--bg-surface-alt);
+      color: var(--text-muted);
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 3px 8px;
+      border-radius: 4px;
+    }
+    .course-card-footer {
+      padding: 16px 24px;
+      background: var(--bg-surface-alt);
+      border-top: 1px solid var(--border-subtle);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .btn-view-syllabus {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--color-primary);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .btn-course-enroll {
+      background: var(--color-primary);
+      color: #fff;
+      padding: 6px 14px;
+      border-radius: var(--radius-full);
+      font-size: 0.85rem;
+      font-weight: 700;
+      transition: var(--transition-fast);
+    }
+    .btn-course-enroll:hover {
+      background: var(--color-primary-light);
+    }
+
+    /* BLOG & ARTICLES SECTION */
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .blog-card {
+      background: var(--bg-surface);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border-subtle);
+      transition: var(--transition-base);
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+    }
+    .blog-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-hover);
+      border-color: rgba(83, 167, 184, 0.4);
+    }
+    .blog-card-header {
+      padding: 22px 24px 14px;
+    }
+    .blog-category-tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: var(--color-accent);
+      margin-bottom: 8px;
+    }
+    .blog-card-title {
+      font-size: 1.18rem;
+      font-weight: 800;
+      color: var(--color-primary-dark);
+      line-height: 1.35;
+      margin-bottom: 8px;
+    }
+    .blog-card-excerpt {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+      padding: 0 24px 20px;
+      flex: 1;
+    }
+    .blog-card-footer {
+      padding: 14px 24px;
+      background: var(--bg-surface-alt);
+      border-top: 1px solid var(--border-subtle);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--color-primary);
+    }
+
+    /* TESTIMONIALS SECTION */
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .testimonial-card {
+      background: var(--bg-surface);
+      border-radius: var(--radius-md);
+      padding: 28px;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border-subtle);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .testi-quote-icon {
+      color: var(--color-accent);
+      margin-bottom: 12px;
+      opacity: 0.6;
+    }
+    .testi-text {
+      font-size: 0.95rem;
+      color: var(--text-main);
+      font-style: italic;
+      line-height: 1.65;
+      margin-bottom: 20px;
+    }
+    .testi-author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      border-top: 1px solid var(--border-subtle);
+      padding-top: 16px;
+    }
+    .testi-avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--color-primary);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+    .testi-author-info strong {
+      display: block;
+      font-size: 0.92rem;
+      color: var(--color-primary-dark);
+    }
+    .testi-author-info span {
+      font-size: 0.8rem;
+      color: var(--color-slate);
+    }
+
+    /* ESTIMATOR SECTION */
+    .estimator-box {
+      background: var(--bg-surface);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      box-shadow: var(--shadow-md);
+      border: 1px solid var(--border-subtle);
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 36px;
+    }
+    .estimator-options h4 {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--color-primary-dark);
+      margin-bottom: 16px;
+    }
+    .estimator-target-radios {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+    .radio-card {
+      flex: 1;
+      min-width: 130px;
+      padding: 12px;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      text-align: center;
+      cursor: pointer;
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      transition: var(--transition-fast);
+      background: var(--bg-surface-alt);
+    }
+    .radio-card.selected {
+      background: var(--color-primary);
+      color: #fff;
+      border-color: var(--color-primary);
+    }
+    .checklist-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      max-height: 240px;
+      overflow-y: auto;
+      padding-right: 6px;
+      margin-bottom: 24px;
+    }
+    .check-label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.88rem;
+      color: var(--text-main);
+      cursor: pointer;
+    }
+    .estimator-results {
+      background: var(--bg-surface-alt);
+      border-radius: var(--radius-md);
+      padding: 28px;
+      border: 1px solid var(--border-subtle);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .res-metric {
+      margin-bottom: 16px;
+    }
+    .res-metric-label {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+    .res-metric-value {
+      font-size: 1.45rem;
+      font-weight: 800;
+      color: var(--color-primary);
+    }
+
+    /* CONTACT & REGISTRATION FORM */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: 40px;
+    }
+    .contact-info-card {
+      background: var(--bg-surface);
+      border-radius: var(--radius-lg);
+      padding: 36px;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border-subtle);
+    }
+    .contact-info-title {
+      font-size: 1.4rem;
+      font-weight: 900;
+      color: var(--color-primary-dark);
+      margin-bottom: 12px;
+    }
+    .contact-info-desc {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+    }
+    .contact-info-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      margin-bottom: 28px;
+    }
+    .contact-info-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 0.95rem;
+      color: var(--text-main);
+    }
+    .contact-info-item strong {
+      display: block;
+      color: var(--color-primary-dark);
+      font-size: 0.88rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .form-card {
+      background: var(--bg-surface);
+      border-radius: var(--radius-lg);
+      padding: 36px;
+      box-shadow: var(--shadow-md);
+      border: 1px solid var(--border-subtle);
+    }
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .form-group {
+      margin-bottom: 16px;
+    }
+    .form-group.full {
+      grid-column: 1 / -1;
+    }
+    .form-label {
+      display: block;
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--color-primary-dark);
+      margin-bottom: 6px;
+    }
+    .form-input, .form-select, .form-textarea {
+      width: 100%;
+      padding: 12px 16px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border-subtle);
+      background: var(--bg-surface-alt);
+      font-size: 0.92rem;
+      font-family: inherit;
+      color: var(--text-main);
+      outline: none;
+      transition: var(--transition-fast);
+    }
+    .form-input:focus, .form-select:focus, .form-textarea:focus {
+      border-color: var(--color-accent);
+      background: #fff;
+      box-shadow: 0 0 0 3px rgba(83, 167, 184, 0.2);
+    }
+    .btn-submit-form {
+      background: var(--color-primary);
+      color: #fff;
+      padding: 14px 28px;
+      border-radius: var(--radius-full);
+      font-weight: 700;
+      font-size: 1rem;
+      width: 100%;
+      transition: var(--transition-base);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+    .btn-submit-form:hover {
+      background: var(--color-primary-light);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(43, 93, 104, 0.28);
+    }
+
+    /* FOOTER */
+    .footer {
+      background: var(--bg-dark);
+      color: rgba(255, 255, 255, 0.8);
+      padding: 60px 0 30px;
+      border-top: 1px solid var(--border-subtle);
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+    .footer-brand h3 {
+      color: #fff;
+      font-size: 1.4rem;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+    .footer-brand p {
+      font-size: 0.92rem;
+      line-height: 1.6;
+      color: rgba(255, 255, 255, 0.65);
+    }
+    .footer-col h4 {
+      color: #fff;
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      font-size: 0.9rem;
+    }
+    .footer-links a:hover {
+      color: var(--color-accent);
+    }
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.85rem;
+      color: rgba(255, 255, 255, 0.5);
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    /* FLOATING ADMIN BUTTON */
+    .admin-floating-btn {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 999;
+      background: var(--color-primary-dark);
+      color: #fff;
+      padding: 12px 20px;
+      border-radius: var(--radius-full);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+      font-weight: 700;
+      font-size: 0.88rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      transition: var(--transition-base);
+    }
+    .admin-floating-btn:hover {
+      background: var(--color-primary);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+    }
+    .admin-lead-badge {
+      background: #E76F51;
+      color: #fff;
+      border-radius: 50%;
+      padding: 2px 7px;
+      font-size: 0.75rem;
+      font-weight: 800;
+    }
+
+    /* MODAL OVERLAY & POPUPS */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(15, 33, 38, 0.7);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      z-index: 2000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      opacity: 0;
+      visibility: hidden;
+      transition: var(--transition-base);
+    }
+    .modal-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+    .modal-box {
+      background: var(--bg-surface);
+      border-radius: var(--radius-lg);
+      max-width: 720px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.3);
+      border: 1px solid var(--border-subtle);
+      position: relative;
+      animation: modalSlide 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .modal-box.wide {
+      max-width: 980px;
+    }
+    @keyframes modalSlide {
+      from { transform: translateY(30px) scale(0.96); opacity: 0; }
+      to { transform: translateY(0) scale(1); opacity: 1; }
+    }
+    .modal-header {
+      padding: 24px 28px;
+      border-bottom: 1px solid var(--border-subtle);
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      background: var(--bg-surface);
+      z-index: 10;
+    }
+    .modal-close-btn {
+      background: rgba(43, 93, 104, 0.1);
+      color: var(--color-primary);
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition-fast);
+      flex-shrink: 0;
+    }
+    .modal-close-btn:hover {
+      background: rgba(43, 93, 104, 0.2);
+    }
+    .modal-body {
+      padding: 28px;
+    }
+
+    /* MODULE ACCORDION */
+    .module-item {
+      background: var(--bg-surface-alt);
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border-subtle);
+      margin-bottom: 12px;
+      overflow: hidden;
+    }
+    .module-header {
+      padding: 14px 18px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--color-primary-dark);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .module-content {
+      padding: 0 18px 14px;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+    }
+
+    /* ADMIN DATABASE MODAL */
+    .admin-stats-summary {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    .admin-summary-card {
+      background: var(--bg-surface-alt);
+      padding: 16px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border-subtle);
+      text-align: center;
+    }
+    .admin-summary-card strong {
+      display: block;
+      font-size: 1.5rem;
+      color: var(--color-primary);
+      margin-top: 4px;
+    }
+    .admin-actions-toolbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+    .admin-btn {
+      padding: 10px 18px;
+      border-radius: var(--radius-full);
+      font-weight: 700;
+      font-size: 0.88rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: var(--transition-fast);
+    }
+    .btn-download-json {
+      background: #2B5D68;
+      color: #fff;
+    }
+    .btn-download-csv {
+      background: #3D7684;
+      color: #fff;
+    }
+    .btn-sync-cloud {
+      background: #D4A373;
+      color: #fff;
+    }
+    .table-scroll-wrapper {
+      max-height: 380px;
+      overflow: auto;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+    }
+    .admin-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+      text-align: left;
+    }
+    .admin-table th {
+      background: var(--bg-surface-alt);
+      padding: 12px 14px;
+      color: var(--color-primary-dark);
+      font-weight: 700;
+      position: sticky;
+      top: 0;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .admin-table td {
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--border-subtle);
+      color: var(--text-main);
+    }
+    .admin-table tr:hover {
+      background: rgba(83, 167, 184, 0.05);
+    }
+    .status-badge {
+      display: inline-block;
+      padding: 3px 8px;
+      border-radius: var(--radius-full);
+      font-size: 0.75rem;
+      font-weight: 700;
+    }
+    .status-new {
+      background: #FFF2CC;
+      color: #855800;
+    }
+    .status-contacted {
+      background: #D4EDDA;
+      color: #155724;
+    }
+
+    /* TOAST NOTIFICATION */
+    .toast-popup {
+      position: fixed;
+      bottom: 24px;
+      left: 24px;
+      background: var(--color-primary-dark);
+      color: #fff;
+      padding: 16px 22px;
+      border-radius: var(--radius-md);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
+      z-index: 3000;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      transform: translateY(100px);
+      opacity: 0;
+      transition: var(--transition-base);
+    }
+    .toast-popup.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    /* RESPONSIVE DESIGN */
+    @media (max-width: 1024px) {
+      .hero-grid { grid-template-columns: 1fr; }
+      .about-card-box { grid-template-columns: 1fr; }
+      .courses-grid { grid-template-columns: repeat(2, 1fr); }
+      .blog-grid { grid-template-columns: repeat(2, 1fr); }
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+      .estimator-box { grid-template-columns: 1fr; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 768px) {
+      .nav-menu { display: none; }
+      .mobile-menu-btn { display: block; }
+      .courses-grid { grid-template-columns: 1fr; }
+      .blog-grid { grid-template-columns: 1fr; }
+      .testimonials-grid { grid-template-columns: 1fr; }
+      .client-categories { grid-template-columns: 1fr; }
+      .stats-strip { grid-template-columns: repeat(2, 1fr); }
+      .hero-title { font-size: 2.1rem; }
+      .form-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- SITE HEADER -->
+  <header class="header" id="siteHeader">
+    <div class="container">
+      <div class="nav-wrapper">
+        <a href="#home" class="brand-logo">
+          <div class="logo-badge">LMT</div>
+          <div>LMT TRAINING</div>
+        </a>
+
+        <ul class="nav-menu">
+          <li><a href="#home" class="nav-link active">Trang Chủ</a></li>
+          <li><a href="#about" class="nav-link">Về Chúng Tôi</a></li>
+          <li><a href="#courses" class="nav-link">Khóa Đào Tạo</a></li>
+          <li><a href="#gallery" class="nav-link">Hoạt Động</a></li>
+          <li><a href="#blog" class="nav-link">Blog & Bài Viết</a></li>
+          <li><a href="#testimonials" class="nav-link">Cảm Nhận</a></li>
+          <li><a href="#contact" class="nav-link">Liên Hệ</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <button class="btn-header-admin" onclick="openAdminModal()" title="Xem Database khách hàng">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 7c0-2 8-2 8-2s8 0 8 2v10c0 2-8 2-8 2s-8 0-8-2V7z"/><path d="M4 12c0 2 8 2 8 2s8 0 8-2"/><path d="M4 17c0 2 8 2 8 2s8 0 8-2"/></svg>
+            <span>Database</span>
+            <span class="admin-lead-badge" id="headerBadge">3</span>
+          </button>
+          <a href="#contact" class="btn-header-consult">
+            <span>Đăng Ký Tư Vấn</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero-section" id="home">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-left">
+          <div class="hero-tagline">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+            <span>Just about mindset and action</span>
+          </div>
+
+          <h1 class="hero-title">
+            Giải Pháp Đào Tạo & Coaching <span>Thực Chiến</span> Cho Doanh Nghiệp
+          </h1>
+
+          <p class="hero-desc">
+            Đồng hành cùng các nhà quản trị và đội ngũ nhân sự nâng tầm năng lực lãnh đạo, làm chủ kỹ năng mềm và bứt phá hiệu suất công việc theo triết lý đào tạo quốc tế: <strong>"Thực hành đến Lý thuyết"</strong>.
+          </p>
+
+          <div class="hero-quote-box">
+            <strong>MONG MUỐN CỦA FOUNDER LÊ MINH TRIẾT:</strong>
+            "Triết muốn chia sẻ kinh nghiệm, kiến thức cho những người cần để giúp họ phát triển bản thân và khám phá tiềm năng. Đào tạo quản lý để có góc nhìn mới mẻ hơn; đào tạo nhân viên để làm việc hiệu suất hơn: 'Vừa làm, vừa tận hưởng, vừa đạt kết quả tốt'."
+          </div>
+
+          <div class="hero-cta-group">
+            <a href="#courses" class="btn-hero-primary">
+              <span>Khám Phá Các Khóa Học</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <a href="#estimator" class="btn-hero-secondary">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              <span>Ước Tính Lộ Trình</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- RIGHT CARD: 4 MỐI QUAN TÂM NGUYÊN BẢN TỪ SITES GOOGLE -->
+        <div class="hero-right">
+          <div class="hero-concerns-card">
+            <span class="concerns-card-badge">Triết Lý Cốt Lõi</span>
+            <h3 class="concerns-title">Một Công Ty Thường Có 4 Mối Quan Tâm Chính:</h3>
+
+            <div class="concern-item">
+              <div class="concern-number">1</div>
+              <div>
+                <span class="concern-text">Kết quả tài chính</span>
+                <span class="concern-sub">Đảm bảo dòng tiền, lợi nhuận và doanh thu tăng trưởng vững chắc</span>
+              </div>
+            </div>
+
+            <div class="concern-item">
+              <div class="concern-number">2</div>
+              <div>
+                <span class="concern-text">Sự thỏa mãn của khách hàng</span>
+                <span class="concern-sub">Chất lượng dịch vụ vượt trội, giữ chân khách hàng dài hạn</span>
+              </div>
+            </div>
+
+            <div class="concern-item">
+              <div class="concern-number">3</div>
+              <div>
+                <span class="concern-text">Cải thiện quy trình nội bộ</span>
+                <span class="concern-sub">Tối ưu hóa thời gian, loại bỏ lãng phí và chuẩn hóa vận hành</span>
+              </div>
+            </div>
+
+            <div class="concern-item highlight">
+              <div class="concern-number">4</div>
+              <div>
+                <span class="concern-text">Phát triển cho nhân viên</span>
+                <span class="concern-sub">Việc phát triển cho nhân viên chính là tạo ra nguồn nội lực phát triển mang tính lâu dài cho toàn công ty.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- STATS STRIP -->
+      <div class="stats-strip">
+        <div class="stat-card">
+          <div class="stat-num">10+</div>
+          <div class="stat-label">Năm Tập Đoàn Decathlon</div>
+          <div class="stat-desc">Kinh nghiệm quản trị sản xuất & chuỗi cung ứng Đông Nam Á</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">13</div>
+          <div class="stat-label">Quốc Gia Trải Nghiệm</div>
+          <div class="stat-desc">8 năm học tập và làm việc tại Pháp & mở rộng quốc tế</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">800+</div>
+          <div class="stat-label">Học Viên & Quản Lý</div>
+          <div class="stat-desc">Đã đào tạo cho hàng chục doanh nghiệp may mặc & startup</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">100%</div>
+          <div class="stat-label">Thực Chiến - Case Study</div>
+          <div class="stat-desc">Mô hình đào tạo đảo chiều: Thực hành giải quyết bài toán trước, lý thuyết sau</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT INSTRUCTOR SECTION -->
+  <section class="section-padding" id="about">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">VỀ CHÚNG TÔI & GIẢNG VIÊN</span>
+        <h2 class="section-title">ThS. Lê Minh Triết - Người Truyền Lửa & Cố Vấn Doanh Nghiệp</h2>
+        <p class="section-desc">Mang tri thức quản trị thực tiễn từ các tập đoàn đa quốc gia Châu Âu đến từng nhân sự và nhà quản lý Việt Nam.</p>
+      </div>
+
+      <div class="about-card-box">
+        <div class="instructor-media">
+          <div class="instructor-portrait-frame">
+            <img src="https://sites.google.com/sitesv-images-rt/AMxu72uE8sIybPaxobGD-eMzqf7ER8qs-a9ppUSXRjiYpi-znEaCnDjEE8_55jwfnsk7VGYAaWdY_lwhAetUHdEFVOSM6UWUsw-cyiP3WQ-fof_PO49DM6iJ9yBTnWAhng1tgV_tPXFC2bDtcyq6HNFt_syKxYqqkjdYIVI5ItO9S2ygEnuGzLjU_EK4e2wm3W1EEa0ZfsFNAukbgs8Sm1v6N01dDCj5wNVBCEgDUFzpWbw=w1280" alt="Thạc sĩ Lê Minh Triết">
+          </div>
+          <div class="instructor-meta-name">LÊ MINH TRIẾT</div>
+          <div class="instructor-meta-title">Thạc sĩ Quản Lý & Chuyên Gia Huấn Luyện</div>
+          <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 6px;">
+            "Tận Tâm và Nhiệt Huyết trong từng buổi đào tạo"
+          </p>
+        </div>
+
+        <div class="instructor-content">
+          <h4>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 2 6 3 6 3s6-1 6-3v-5"/></svg>
+            HỌC VẤN & BẰNG CẤP
+          </h4>
+          <p class="instructor-bio-p">
+            <strong>2002 - 2009:</strong> Tốt nghiệp Thạc sĩ tại <strong>Đại học Caen Normandie (CH Pháp)</strong>. 8 năm sinh sống, học tập và làm việc trong môi trường chuẩn mực Châu Âu.
+          </p>
+
+          <h4>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+            KINH NGHIỆM TẠI TẬP ĐOÀN ĐA QUỐC GIA DECATHLON
+          </h4>
+          <p class="instructor-bio-p">
+            Hơn 10 năm cống hiến tại <strong>Decathlon</strong> – Tập đoàn đa quốc gia Pháp kinh doanh hàng thể thao lớn nhất Châu Âu (hơn 2.000 cửa hàng trên 60 quốc gia):
+          </p>
+          <ul class="career-timeline-list">
+            <li class="career-timeline-item"><strong>Nhân viên quản lý đơn hàng:</strong> 6 tháng</li>
+            <li class="career-timeline-item"><strong>Trưởng phòng quản lý sản xuất Ba lô, Túi xách - Việt Nam:</strong> 1,5 năm</li>
+            <li class="career-timeline-item"><strong>Giám đốc bộ phận Ba lô:</strong> Khu vực Đông Nam Á và Bangladesh - 2 năm</li>
+            <li class="career-timeline-item"><strong>Giám đốc bộ phận Ba lô, Lều và Bóng - Việt Nam:</strong> 2 năm</li>
+            <li class="career-timeline-item"><strong>Giám đốc các bộ phận Nguyên Phụ Liệu:</strong> Khu vực Đông Nam Á - 4 năm</li>
+          </ul>
+
+          <h4>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            HOẠT ĐỘNG HIỆN TẠI & ĐÀO TẠO GIẢNG DẠY
+          </h4>
+          <p class="instructor-bio-p">
+            • <strong>Phó Giám Đốc</strong> CÔNG TY LE MINH TRIET (Chuyên nhập khẩu & phân phối gỗ quốc tế).<br>
+            • <strong>Sáng lập</strong> "Student Coach Program" – Huấn luyện kỹ năng mềm cho thế hệ trẻ.<br>
+            • <strong>2018 - 2022:</strong> Trợ giảng chương trình Thạc Sĩ "Quản Lý Chuỗi Cung Ứng" của <strong>Paris Sorbonne IAE - CFVG</strong> (Trung tâm Pháp - Việt Đào tạo về Quản lý).<br>
+            • <strong>2018 - 2022:</strong> Thành viên Hội đồng Giám Khảo bảo vệ luận văn Thạc sĩ chuỗi cung ứng IAE Sorbonne.<br>
+            • Trợ giảng chuyên đề: <em>"Cách xây dựng KPI và Thẻ Điểm Cân Bằng (BSC) cho Doanh Nghiệp"</em>.
+          </p>
+
+          <div class="experience-tag-cloud">
+            <span class="exp-tag">Quản Lý Thời Gian</span>
+            <span class="exp-tag">Phát Triển Nhân Viên</span>
+            <span class="exp-tag">Giao Tiếp & Thuyết Trình</span>
+            <span class="exp-tag">Quản Lý Dự Án</span>
+            <span class="exp-tag">Xây Dựng KPI & BSC</span>
+            <span class="exp-tag">Đàm Phán Thương Lượng</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARTNERS & CLIENTS SECTION -->
+  <section class="section-padding partners-section" id="clients">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">UY TÍN & CHẤT LƯỢNG</span>
+        <h2 class="section-title">Khách Hàng Doanh Nghiệp & Các Tổ Chức Đã Đào Tạo</h2>
+        <p class="section-desc">Minh chứng cho chất lượng đào tạo thực chiến đã được kiểm nghiệm qua nhiều quy mô doanh nghiệp.</p>
+      </div>
+
+      <div class="client-categories">
+        <!-- DOANH NGHIỆP LỚN & STARTUP -->
+        <div class="client-category-card">
+          <div class="client-cat-header">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M3 21h18M3 7v14M21 7v14M9 21V11h6v10M9 7h6M12 3v4"/></svg>
+            <h3>TỔ CHỨC / DOANH NGHIỆP ĐÃ & ĐANG TRAINING</h3>
+          </div>
+          <div class="client-item-list">
+            <div class="client-chip">
+              <span class="client-chip-name">HỮU TOÀN GROUP</span>
+              <span class="client-chip-topic">Project Management (Quản lý dự án)</span>
+            </div>
+            <div class="client-chip">
+              <span class="client-chip-name">AGRIDRONE VIỆT NAM</span>
+              <span class="client-chip-topic">KPIs & Performance Review</span>
+            </div>
+            <div class="client-chip">
+              <span class="client-chip-name">HONDA TRADING VN</span>
+              <span class="client-chip-topic">Management & Leadership</span>
+            </div>
+            <div class="client-chip">
+              <span class="client-chip-name">DECATHLON VN</span>
+              <span class="client-chip-topic">Kỹ năng mềm & Quản trị</span>
+            </div>
+            <div class="client-chip">
+              <span class="client-chip-name">TNG THÁI NGUYÊN GARMENT</span>
+              <span class="client-chip-topic">Quản lý xưởng & Giao việc</span>
+            </div>
+            <div class="client-chip">
+              <span class="client-chip-name">UNITEX INTERNATIONAL</span>
+              <span class="client-chip-topic">Kỹ năng điều hành & BSC</span>
+            </div>
+            <div class="client-chip">
+              <span class="client-chip-name">TAN THANH DAT CAPS</span>
+              <span class="client-chip-topic">Đào tạo đội ngũ giám sát</span>
+            </div>
+            <div class="client-chip">
+              <span class="client-chip-name">VIETNAM TEELICIOUS</span>
+              <span class="client-chip-topic">Kỹ năng giao tiếp & Bán hàng</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- TRƯỜNG ĐẠI HỌC & CLB SINH VIÊN -->
+        <div class="client-category-card">
+          <div class="client-cat-header">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+            <h3>TRƯỜNG ĐẠI HỌC & CÁC CLB HỌC THUẬT</h3>
+          </div>
+          <div class="client-item-list">
+            <div class="client-chip">
+              <span class="client-chip-name">CFVG - PARIS SORBONNE</span>
+              <span class="client-chip-topic">Thạc Sĩ Chuỗi Cung Ứng & BSC</span>
+            </div>
+            <div class="client-chip">
+              <span class="client-chip-name">UEH MENTORING - ĐH UEH</span>
+              <span class="client-chip-topic">Time Management & Critical Thinking</span>
+            </div>
+            <div class="client-chip">
+              <span class="client-chip-name">CLB NHÂN SỰ-KHỞI NGHIỆP UEH</span>
+              <span class="client-chip-topic">Giao Tiếp Thấu Cảm</span>
+            </div>
+            <div class="client-chip">
+              <span class="client-chip-name">ĐH KINH TẾ - TÀI CHÍNH (UEF)</span>
+              <span class="client-chip-topic">Supply Chain & Logistics</span>
+            </div>
+            <div class="client-chip">
+              <span class="client-chip-name">ĐH QUỐC TẾ (IU - ĐHQG)</span>
+              <span class="client-chip-topic">How to Enlarge Our Comfort Zone</span>
+            </div>
+            <div class="client-chip">
+              <span class="client-chip-name">FUJI BACH KHOA CLUB</span>
+              <span class="client-chip-topic">Tư duy phản biện & Thuyết trình</span>
+            </div>
+            <div class="client-chip">
+              <span class="client-chip-name">CLB SCUEF - ĐH UEF</span>
+              <span class="client-chip-topic">Chuỗi cung ứng thực chiến</span>
+            </div>
+            <div class="client-chip">
+              <span class="client-chip-name">FTU2 (ĐH NGOẠI THƯƠNG CS2)</span>
+              <span class="client-chip-topic">KPI & Performance Review</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACTIVITY PHOTO GALLERY -->
+  <section class="section-padding" id="gallery">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">HÌNH ẢNH HOẠT ĐỘNG</span>
+        <h2 class="section-title">Khoảnh Khắc Đào Tạo & Huấn Luyện Thực Tế</h2>
+        <p class="section-desc">Không khí học tập sôi nổi, tương tác đội nhóm và tinh thần thực hành cao độ tại các lớp học của LMT Training.</p>
+      </div>
+
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <img src="https://sites.google.com/sitesv-images-rt/AMxu72vUWIRmMFVYD9FKjpO3G5v3l7o8Ky-vHoqeyBzd0O3hVZwGoUBXk6Q5FThqJuUNgCwYIyHaLIt4NKWva_70HP1UfGoeVIT4EumVvTyv26QeZjcXqCN07Hfnqm2wZPQ_RHpioNwMTfwVgwWwtWXlOzq-oU9PzRKVFin5buCLF8QwGS5XXwRSI5qro6Sb2xUXst0T7h3uLLy3ewwwtt2Na4gHOHU3UsxCHi8K-fkE1k4=w1280" alt="Lớp học thực chiến Decathlon">
+          <div class="gallery-overlay">Huấn luyện đội ngũ quản lý Decathlon</div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://sites.google.com/sitesv-images-rt/AMxu72uGGHuhowwSVzArwNRTeqePUwZkuNkXUU3q_P2ltPgIs5qLsFyZdhW975GN8Yxdehu4r92QxP1j7lZLwzclPk90572Eb2R6-VQ0TTF34BN_28T2zwbNGzkWBVW_oZGzhEatFOeeD0oXhqigV3Q4aIU5YKuKyr_9p66hN_78sbJR7jz4_1z4KZjGO6iuhKnaiH0C_cnl4d_25vCXiBt_H7f5WfhR8OBZIWL25zzr_9c=w1280" alt="Hoạt động thảo luận nhóm">
+          <div class="gallery-overlay">Thực hành giải quyết tình huống (Case study)</div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://sites.google.com/sitesv-images-rt/AMxu72vXBX4-aJvS8YeNpnn0nZIVqFFosMyWcHjtomLST6t-Pg5RakV41QoDmHU1hUuhWPoNTNsVX4k4UjD8I52ffmKCeC35_zwGTaicYmH5Qq6XDoTUeL9CARsp-raEIVCTZKBnrVnDFO6GDvkAcP0aLLjxuqI7ZRhU3F9ZMazMWGdWxxfPY1-5m7CKFd3T60-4XSUcJ13s_xxaviBSuRXTjXyiMFn5GZN37zwqZJ8zrPo=w1280" alt="Đào tạo kỹ năng quản lý thời gian">
+          <div class="gallery-overlay">Chuyên đề Quản lý thời gian hiệu quả</div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://sites.google.com/sitesv-images-rt/AMxu72suTtWn6zCoV7PAEh8Md0S5rqLBR8oiIgOIdrozEXS2TzuqW3oXbGI4r1ugR-ZuM8MoCopsFMlTdK9j4OIaw5MnQD0zUBtzNuHLpGrS8NGq3vBkt9T6kL3LQAvhtoSrX_GtfS5Zox10CTKh0e-o9FhuwVAuNoYGEBFYuXbPMYCF9WmQcTmYgwA63iAnVDkc3GhBBE5qxFlvv7Yi12PuJTDGpl-T7uwTPK56HCWK=w1280" alt="Đào tạo sinh viên UEH">
+          <div class="gallery-overlay">Student Coach Program & Mentoring</div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://sites.google.com/sitesv-images-rt/AMxu72vutsAVNqs8L9TDiNmNX-34wUHcQpnEb7F_XNhD2Gdw71ZjJoIl0mnNPaP0ogIohNuCD693tWuzoQ1g2gqg79OpcfGvCQOseXtKNuTGe9wBdO6X9EY8veTpHlrCxvuEPAtXJ9-LeTjmVXHh9kUTJIr3krbiiOlnhkeKZhxTLLSdNAOSdYDwH9XhD9zVDbICCY5ePTrfTRTknfq3-I783Sl8rAJ6XlNkjrJ8YbylgMc=w1280" alt="Hội đồng CFVG Sorbonne">
+          <div class="gallery-overlay">Hội đồng Thạc sĩ Sorbonne CFVG</div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://sites.google.com/sitesv-images-rt/AMxu72tBLaFIgqLlFb1n5v3yoRWvHzQcMk2VVawMXWJVuxFAfXenNgdWJkRVG3sUSCuhRq5bMj4T27hNsKVz_8qMF52G5OMGaHq8GMznaKmCZHbraTHKncLF8UTcQ7EPmqekSmJN4ApOo-7tVecQBYqfw_XCjsBL91WOx3nLzcNiWkcVdQAQW0NHSgogv16VgFRgwlGIkZWklM9ItVMMVBqhnY2SsNCyC1dRb7DywCbaACU=w1280" alt="Đào tạo Hữu Toàn Group">
+          <div class="gallery-overlay">Workshop Quản lý dự án tại Hữu Toàn</div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://sites.google.com/sitesv-images-rt/AMxu72tpX62TKEV8CS2Pyl9oWSaoSQPoGie-k9U873-xQs0zdlUYtvXhYSmqEURtUgauEv1SBY5xsuxtKJS0c9q56Kd7CpqqUA53-23zVEFzIizWPgHcngA879CRi6eU2EM8X6wGantQ60UZpYeQJOWaF_wAx9AAI6V-vccesuaMTaNeIPIfXQQKThJMmtz7QOADtEfc50X6a624l9idRk6ws5IfivetxnZL53CzEX7f=w1280" alt="Workshop KPI Agridrone">
+          <div class="gallery-overlay">Xây dựng KPI & Thẻ điểm cân bằng</div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://sites.google.com/sitesv-images-rt/AMxu72uqbzVEDLO_M1gWGKPZLM1-tLp8XqMRXaKv2-idqro2V2YkLe1Sv_kFq3CaXJkfbXFrgcqzzB_iKqm_CdhwRJn6z-h_qhTVFRojzvQWcKdF5xdiUbDAeBEmHW3fBgyX7fF1IcFL7m1lc8mMggBb_ZYeSYR6FnNT4hNoY9yGbsr65Ayf_i76lgkazZJFH1J1BLBGCAMTmNGwM5Ly72yY4xkxhPnG-v0ZbErcIYsO_y8=w1280" alt="Lớp học thực tế UEF">
+          <div class="gallery-overlay">Giao tiếp thấu cảm & Tư duy phản biện</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COURSES SECTION -->
+  <section class="section-padding" id="courses">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">CHƯƠNG TRÌNH ĐÀO TẠO</span>
+        <h2 class="section-title">Danh Mục Các Khóa Đào Tạo Thực Chiến</h2>
+        <p class="section-desc">Được thiết kế linh hoạt, bám sát vấn đề thực tế của doanh nghiệp với đầy đủ đề cương chi tiết.</p>
+      </div>
+
+      <!-- FILTER TABS -->
+      <div class="filter-tabs-wrapper">
+        <button class="filter-tab active" data-filter="all" onclick="filterCourses('all', this)">Tất Cả Khóa Học (10)</button>
+        <button class="filter-tab" data-filter="manager" onclick="filterCourses('manager', this)">Dành Cho Quản Lý (8)</button>
+        <button class="filter-tab" data-filter="staff" onclick="filterCourses('staff', this)">Dành Cho Nhân Viên (3)</button>
+        <button class="filter-tab" data-filter="hr" onclick="filterCourses('hr', this)">Dành Cho Nhân Sự HR (5)</button>
+      </div>
+
+      <!-- SEARCH BOX -->
+      <div class="search-box-wrapper">
+        <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        <input type="text" class="search-input" id="courseSearchInput" placeholder="Tìm kiếm khóa học (ví dụ: KPI, quản lý, giao việc, thời gian...)" oninput="searchCourses()">
+      </div>
+
+      <!-- COURSES GRID -->
+      <div class="courses-grid" id="coursesGridContainer">
+        <!-- Rendered by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOG & ARTICLES SECTION -->
+  <section class="section-padding" id="blog" style="background: rgba(255, 255, 255, 0.4); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">GÓC CHIA SẺ & TRI THỨC</span>
+        <h2 class="section-title">Bài Viết Nổi Bật Của Founder Lê Minh Triết</h2>
+        <p class="section-desc">Những đúc kết từ trải nghiệm thực tế về lãnh đạo, quản lý thời gian và phương pháp giao tiếp hiệu quả.</p>
+      </div>
+
+      <div class="blog-grid" id="blogGridContainer">
+        <!-- Rendered by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS SECTION -->
+  <section class="section-padding" id="testimonials">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">CẢM NHẬN HỌC VIÊN</span>
+        <h2 class="section-title">Học Viên Nói Gì Về LMT Training?</h2>
+        <p class="section-desc">Những phản hồi chân thực từ các bạn học viên doanh nghiệp và sinh viên sau các khóa đào tạo.</p>
+      </div>
+
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div>
+            <svg class="testi-quote-icon" width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+            <p class="testi-text">
+              “Học Quản lý thời gian không phải là để có thêm thời gian và khiến mình nhìn vào bận rộn, mà là để nhìn lại con đường mình đang đi, sắp xếp, ưu tiên, tập trung hơn và sống trọn vẹn hơn. Em biết thêm một cách giúp mình quản lý thời gian tốt hơn là 'Thời gian BĂNG', em đang áp dụng mỗi ngày.”
+            </p>
+          </div>
+          <div class="testi-author">
+            <div class="testi-avatar">UEH</div>
+            <div class="testi-author-info">
+              <strong>Học viên UEH Mentoring</strong>
+              <span>Chuyên đề: Time Management</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div>
+            <svg class="testi-quote-icon" width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+            <p class="testi-text">
+              “Siêu practical luôn, flow ngược lại so với những buổi training khác em từng tham gia: Thực hành đến Lý thuyết. Em siêu thích hình thức này vì nó khiến bản thân mình tự vận động và tự suy ra những gì mình phải học, không cần ngẫm nghĩ lý thuyết xa vời vì mọi người đã trải qua thực tế ngay trong lớp!”
+            </p>
+          </div>
+          <div class="testi-author">
+            <div class="testi-avatar">FTU</div>
+            <div class="testi-author-info">
+              <strong>Học viên FTU2 (Ngoại Thương)</strong>
+              <span>Chuyên đề: KPI & Performance Review</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div>
+            <svg class="testi-quote-icon" width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+            <p class="testi-text">
+              “Anh Triết có khả năng rất tốt về kỹ năng mềm và khả năng truyền cảm hứng. Hi vọng anh luôn giữ vững lòng nhiệt thành để mang những tri thức quý báu từ tập đoàn quốc tế đến các bạn nhân sự trẻ và cộng đồng doanh nghiệp.”
+            </p>
+          </div>
+          <div class="testi-author">
+            <div class="testi-avatar">DEC</div>
+            <div class="testi-author-info">
+              <strong>Chị Cúc</strong>
+              <span>Decathlon Việt Nam</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ESTIMATOR INTERACTIVE TOOL -->
+  <section class="section-padding" id="estimator">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">CÔNG CỤ TƯ VẤN NHANH</span>
+        <h2 class="section-title">Ước Tính Lộ Trình & Buổi Đào Tạo Cho Doanh Nghiệp</h2>
+        <p class="section-desc">Chọn đối tượng và các khóa học cần thiết để nhận đề xuất thời lượng khảo sát và coaching tương ứng.</p>
+      </div>
+
+      <div class="estimator-box">
+        <div class="estimator-options">
+          <h4>1. Chọn đối tượng đào tạo ưu tiên:</h4>
+          <div class="estimator-target-radios">
+            <div class="radio-card selected" onclick="selectEstimatorTarget('manager', this)">Đội Ngũ Quản Lý</div>
+            <div class="radio-card" onclick="selectEstimatorTarget('staff', this)">Nhân Viên Chuyên Môn</div>
+            <div class="radio-card" onclick="selectEstimatorTarget('all', this)">Toàn Bộ Công Ty</div>
+          </div>
+
+          <h4>2. Tích chọn các khóa học cần đào tạo:</h4>
+          <div class="checklist-container" id="estimatorChecklist">
+            <!-- Rendered by JS -->
+          </div>
+
+          <h4>3. Quy mô nhân sự tham gia:</h4>
+          <select class="form-select" id="estimatorHeadcount" onchange="updateEstimator()" style="max-width: 320px;">
+            <option value="15">Dưới 15 học viên (Nhóm trọng tâm)</option>
+            <option value="30" selected>15 - 30 học viên (Một phòng ban / xưởng)</option>
+            <option value="60">30 - 60 học viên (Nhiều phòng ban liên kết)</option>
+            <option value="100">Trên 60 học viên (Quy mô toàn công ty)</option>
+          </select>
+        </div>
+
+        <div class="estimator-results">
+          <div>
+            <h4 style="font-size: 1.15rem; color: var(--color-primary-dark); margin-bottom: 20px;">ĐỀ XUẤT LỘ TRÌNH ĐÀO TẠO:</h4>
+            
+            <div class="res-metric">
+              <div class="res-metric-label">Khóa Học Đã Chọn:</div>
+              <div class="res-metric-value" id="resCourseCount">3 Khóa học</div>
+              <p id="resCourseSummary" style="font-size: 0.85rem; color: var(--text-muted); margin-top: 4px;">Gói Nâng Cao Năng Lực</p>
+            </div>
+
+            <div class="res-metric">
+              <div class="res-metric-label">Thời Lượng Huấn Luyện:</div>
+              <div class="res-metric-value" id="resDuration">3 - 4 Ngày Đào Tạo</div>
+            </div>
+
+            <div class="res-metric">
+              <div class="res-metric-label">Gói Cố Vấn & Coaching Đi Kèm:</div>
+              <div class="res-metric-value" id="resCoaching" style="font-size: 1.15rem; color: var(--color-accent-hover);">2 Tháng (6 buổi coaching 1:1)</div>
+            </div>
+          </div>
+
+          <button class="btn-hero-primary" onclick="applyEstimatorToForm()" style="width: 100%; justify-content: center; margin-top: 20px;">
+            <span>Chuyển Lộ Trình Này Vào Form Tư Vấn</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT & CONSULTATION FORM -->
+  <section class="section-padding" id="contact" style="background: rgba(255, 255, 255, 0.6); border-top: 1px solid var(--border-subtle);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">KẾT NỐI & TƯ VẤN</span>
+        <h2 class="section-title">Đăng Ký Nhận Tư Vấn Lộ Trình Đào Tạo</h2>
+        <p class="section-desc">Vui lòng điền thông tin bên dưới. Thầy Lê Minh Triết và LMT Training sẽ liên hệ trao đổi chi tiết trong 24 giờ.</p>
+      </div>
+
+      <div class="contact-grid">
+        <!-- CONTACT INFORMATION -->
+        <div class="contact-info-card">
+          <h3 class="contact-info-title">LMT TRAINING</h3>
+          <p class="contact-info-desc">
+            Sẵn sàng đồng hành cùng các doanh nghiệp tại TP. Hồ Chí Minh, Đồng Tháp và các tỉnh thành trên toàn quốc.
+          </p>
+
+          <ul class="contact-info-list">
+            <li class="contact-info-item">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <div>
+                <strong>Địa Chỉ Cơ Sở 1 (TP. HCM):</strong>
+                <span>268 Tên Lửa, P. Bình Trị Đông B, Q. Bình Tân, TP. HCM</span>
+              </div>
+            </li>
+            <li class="contact-info-item">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <div>
+                <strong>Địa Chỉ Cơ Sở 2 (Đồng Tháp):</strong>
+                <span>Tổ 20, Ấp An Định, Xã An Bình, Huyện Cao Lãnh, Tỉnh Đồng Tháp</span>
+              </div>
+            </li>
+            <li class="contact-info-item">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <div>
+                <strong>Điện Thoại / Hotline:</strong>
+                <a href="tel:0982471444" style="color: var(--color-primary); font-weight: 700;">0982 471 444</a>
+              </div>
+            </li>
+            <li class="contact-info-item">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <div>
+                <strong>Email Liên Hệ:</strong>
+                <a href="mailto:leminhtriet1985@gmail.com" style="color: var(--color-primary); font-weight: 700;">leminhtriet1985@gmail.com</a>
+              </div>
+            </li>
+            <li class="contact-info-item">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+              <div>
+                <strong>LinkedIn:</strong>
+                <a href="https://www.linkedin.com/in/minh-triet-le-2a988b4b/" target="_blank" style="color: var(--color-primary); font-weight: 700;">linkedin.com/in/minh-triet-le</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- CONSULTATION FORM -->
+        <div class="form-card">
+          <form id="consultLeadForm" onsubmit="handleLeadSubmit(event)">
+            <div class="form-grid">
+              <div class="form-group">
+                <label class="form-label" for="leadFullName">Họ và Tên *</label>
+                <input type="text" class="form-input" id="leadFullName" required placeholder="Ví dụ: Nguyễn Văn An">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="leadPhone">Số Điện Thoại / Zalo *</label>
+                <input type="tel" class="form-input" id="leadPhone" required placeholder="Ví dụ: 0918 123 456">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="leadEmail">Email Công Việc</label>
+                <input type="email" class="form-input" id="leadEmail" placeholder="name@company.com">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="leadCompany">Tên Doanh Nghiệp / Tổ Chức</label>
+                <input type="text" class="form-input" id="leadCompany" placeholder="Ví dụ: Công ty May Mặc TNG">
+              </div>
+              <div class="form-group full">
+                <label class="form-label" for="leadCourse">Khóa Đào Tạo Quan Tâm</label>
+                <select class="form-select" id="leadCourse">
+                  <option value="Quản Lý Cơ Bản & Quản Lý Chuyên Sâu">Quản Lý Cơ Bản & Quản Lý Chuyên Sâu</option>
+                  <option value="Xây Dựng & Quản Lý KPI, Thẻ Điểm Cân Bằng (BSC)">Xây Dựng & Quản Lý KPI, Thẻ Điểm Cân Bằng (BSC)</option>
+                  <option value="Giao Tiếp Hiệu Quả & Thuyết Trình">Giao Tiếp Hiệu Quả & Thuyết Trình</option>
+                  <option value="Quản Lý Thời Gian & Kỹ Thuật BĂNG">Quản Lý Thời Gian & Kỹ Thuật BĂNG</option>
+                  <option value="Đàm Phán & Thương Lượng">Đàm Phán & Thương Lượng</option>
+                  <option value="Xây Dựng & Quản Lý Dự Án Cùng Nhân Viên">Xây Dựng & Quản Lý Dự Án Cùng Nhân Viên</option>
+                  <option value="Phỏng Vấn Tuyển Dụng & Đánh Giá Cuối Năm">Phỏng Vấn Tuyển Dụng & Đánh Giá Cuối Năm</option>
+                  <option value="Tư vấn thiết kế lộ trình theo yêu cầu">Tư vấn thiết kế lộ trình theo yêu cầu riêng</option>
+                </select>
+              </div>
+              <div class="form-group full">
+                <label class="form-label" for="leadNotes">Nhu Cầu Đào Tạo Cụ Thể Của Doanh Nghiệp</label>
+                <textarea class="form-textarea" id="leadNotes" rows="3" placeholder="Mô tả bối cảnh nhân sự, số lượng học viên, kỳ vọng đầu ra hoặc thời gian mong muốn..."></textarea>
+              </div>
+            </div>
+
+            <button type="submit" class="btn-submit-form" id="btnSubmitLead">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+              <span>Gửi Yêu Cầu Tư Vấn Ngay</span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>LMT TRAINING</h3>
+          <p style="margin-bottom: 12px;">
+            Chương trình đào tạo và huấn luyện doanh nghiệp thực chiến. Giúp đội ngũ quản lý và nhân sự phát triển năng lực, khai phóng tiềm năng và gia tăng nội lực lâu dài.
+          </p>
+          <p style="font-style: italic; color: var(--color-accent);">
+            "Just about mindset and action"
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Nhóm Khóa Học</h4>
+          <ul class="footer-links">
+            <li><a href="#courses" onclick="filterCourses('manager')">• Dành cho Quản lý doanh nghiệp</a></li>
+            <li><a href="#courses" onclick="filterCourses('staff')">• Dành cho Nhân viên thực thi</a></li>
+            <li><a href="#courses" onclick="filterCourses('hr')">• Dành cho Bộ phận Nhân sự HR</a></li>
+            <li><a href="#estimator">• Thiết kế lộ trình riêng theo yêu cầu</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Liên Kết Nhanh</h4>
+          <ul class="footer-links">
+            <li><a href="#about">• Giảng viên ThS. Lê Minh Triết</a></li>
+            <li><a href="#clients">• Doanh nghiệp & Trường ĐH đã đào tạo</a></li>
+            <li><a href="#gallery">• Thư viện hình ảnh hoạt động</a></li>
+            <li><a href="#blog">• Góc chia sẻ & Blog chuyên môn</a></li>
+            <li><a href="javascript:void(0)" onclick="openAdminModal()">• Quản trị Database & Leads</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 LMT TRAINING. Toàn bộ nội dung và thương hiệu thuộc bản quyền của ThS. Lê Minh Triết.</div>
+        <div style="display: flex; gap: 16px;">
+          <span>TP. Hồ Chí Minh • Đồng Tháp</span>
+          <a href="javascript:void(0)" onclick="openAdminModal()" style="color: var(--color-accent); font-weight: 700;">[Admin Database Portal]</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FLOATING ADMIN BUTTON -->
+  <button class="admin-floating-btn" onclick="openAdminModal()" title="Mở Trung Tâm Database Khách Hàng">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 7c0-2 8-2 8-2s8 0 8 2v10c0 2-8 2-8 2s-8 0-8-2V7z"/><path d="M4 12c0 2 8 2 8 2s8 0 8-2"/><path d="M4 17c0 2 8 2 8 2s8 0 8-2"/></svg>
+    <span>Database Khách Hàng</span>
+    <span class="admin-lead-badge" id="floatBadge">3</span>
+  </button>
+
+  <!-- MODAL 1: COURSE SYLLABUS DETAIL MODAL -->
+  <div class="modal-overlay" id="courseDetailModal" onclick="handleModalOverlayClick(event, 'courseDetailModal')">
+    <div class="modal-box">
+      <div class="modal-header">
+        <div>
+          <span class="target-badge badge-manager" id="modalTargetBadge">DÀNH CHO QUẢN LÝ</span>
+          <h3 id="modalCourseTitle" style="font-size: 1.45rem; font-weight: 800; color: var(--color-primary-dark); margin-top: 6px;">Tiêu đề khóa học</h3>
+        </div>
+        <button class="modal-close-btn" onclick="closeModal('courseDetailModal')">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+
+      <div class="modal-body">
+        <div style="margin-bottom: 20px;">
+          <h4 style="font-size: 0.95rem; font-weight: 800; color: var(--color-primary); text-transform: uppercase; margin-bottom: 6px;">Mục Tiêu Khóa Học:</h4>
+          <p id="modalCourseObjective" style="font-size: 0.95rem; color: var(--text-main); line-height: 1.6;"></p>
+        </div>
+
+        <div style="margin-bottom: 24px;">
+          <h4 style="font-size: 0.95rem; font-weight: 800; color: var(--color-primary); text-transform: uppercase; margin-bottom: 12px;">Đề Cương Chi Tiết (Nội Dung Đào Tạo):</h4>
+          <div id="modalModuleList">
+            <!-- Accordions rendered dynamically -->
+          </div>
+        </div>
+
+        <div style="background: var(--bg-surface-alt); padding: 18px; border-radius: var(--radius-sm); border-left: 4px solid var(--color-accent); margin-bottom: 24px;">
+          <h4 style="font-size: 0.9rem; font-weight: 800; color: var(--color-primary-dark); margin-bottom: 4px;">CAM KẾT ĐẦU RA CHO HỌC VIÊN:</h4>
+          <p id="modalCourseOutcome" style="font-size: 0.9rem; color: var(--text-muted);"></p>
+        </div>
+
+        <div style="display: flex; gap: 12px; justify-content: flex-end;">
+          <button class="btn-hero-secondary" onclick="closeModal('courseDetailModal')">Đóng</button>
+          <button class="btn-hero-primary" onclick="registerCurrentModalCourse()">
+            <span>Đăng Ký Khóa Học Này</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL 2: BLOG ARTICLE VIEWER MODAL -->
+  <div class="modal-overlay" id="blogDetailModal" onclick="handleModalOverlayClick(event, 'blogDetailModal')">
+    <div class="modal-box">
+      <div class="modal-header">
+        <div>
+          <span class="blog-category-tag" id="blogModalCategory">BÀI VIẾT NỔI BẬT</span>
+          <h3 id="blogModalTitle" style="font-size: 1.35rem; font-weight: 800; color: var(--color-primary-dark); margin-top: 4px;">Tiêu đề bài viết</h3>
+        </div>
+        <button class="modal-close-btn" onclick="closeModal('blogDetailModal')">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+
+      <div class="modal-body">
+        <div id="blogModalContent" style="font-size: 0.98rem; color: var(--text-main); line-height: 1.75;">
+          <!-- Article rendered dynamically -->
+        </div>
+
+        <div style="margin-top: 32px; padding-top: 20px; border-top: 1px solid var(--border-subtle); display: flex; justify-content: space-between; align-items: center;">
+          <span style="font-size: 0.85rem; color: var(--text-muted);">Tác giả: <strong>ThS. Lê Minh Triết (Founder LMT Training)</strong></span>
+          <button class="btn-hero-secondary" onclick="closeModal('blogDetailModal')">Đóng bài viết</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL 3: ADMIN DATABASE & RAILWAY/GITHUB SYNC PORTAL -->
+  <div class="modal-overlay" id="adminDatabaseModal" onclick="handleModalOverlayClick(event, 'adminDatabaseModal')">
+    <div class="modal-box wide">
+      <div class="modal-header">
+        <div>
+          <span style="font-size: 0.78rem; font-weight: 800; color: #2B5D68; text-transform: uppercase; letter-spacing: 1px;">TRUNG TÂM DỮ LIỆU & QUẢN TRỊ KHÁCH HÀNG</span>
+          <h3 style="font-size: 1.4rem; font-weight: 800; color: var(--color-primary-dark); margin-top: 4px;">LMT Training Database Portal</h3>
+        </div>
+        <button class="modal-close-btn" onclick="closeModal('adminDatabaseModal')">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+
+      <div class="modal-body">
+        <!-- STATS CARDS -->
+        <div class="admin-stats-summary">
+          <div class="admin-summary-card">
+            <span>Tổng Số Yêu Cầu Tư Vấn</span>
+            <strong id="adminTotalLeads">3</strong>
+          </div>
+          <div class="admin-summary-card">
+            <span>Trạng Thái Lưu Trữ</span>
+            <strong style="font-size: 1.05rem; color: #28a745;" id="adminStorageStatus">Railway & GitHub Ready</strong>
+          </div>
+          <div class="admin-summary-card">
+            <span>Cập Nhật Gần Nhất</span>
+            <strong style="font-size: 0.95rem; color: var(--color-primary-dark);" id="adminLastUpdated">Vừa xong</strong>
+          </div>
+        </div>
+
+        <!-- ACTION TOOLBAR -->
+        <div class="admin-actions-toolbar">
+          <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+            <button class="admin-btn btn-download-json" onclick="downloadDatabaseJson()">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              <span>Xuất file database.json (Cho GitHub)</span>
+            </button>
+
+            <button class="admin-btn btn-download-csv" onclick="downloadLeadsCsv()">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+              <span>Xuất Excel / CSV</span>
+            </button>
+          </div>
+
+          <div style="display: flex; gap: 8px;">
+            <button class="admin-btn" style="background: rgba(43,93,104,0.1); color: var(--color-primary);" onclick="loadSampleLeads()">
+              <span>Nạp Data Mẫu</span>
+            </button>
+            <button class="admin-btn" style="background: rgba(231,111,81,0.12); color: #E76F51;" onclick="clearAllLeads()">
+              <span>Xóa Bộ Nhớ</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- RAILWAY ENDPOINT CONFIGURATION (OPTIONAL) -->
+        <div style="background: var(--bg-surface-alt); padding: 14px 18px; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle); margin-bottom: 20px; display: flex; align-items: center; justify-content: space-between; gap: 14px; flex-wrap: wrap;">
+          <div style="flex: 1; min-width: 260px;">
+            <div style="font-size: 0.82rem; font-weight: 700; color: var(--color-primary-dark); margin-bottom: 2px;">
+              🔗 Railway API Endpoint (Nếu deploy trên railway.com):
+            </div>
+            <input type="text" id="railwayApiInput" class="form-input" style="padding: 6px 12px; font-size: 0.85rem;" placeholder="https://<ten-project>.up.railway.app/api/leads" onchange="saveRailwayApiUrl(this.value)">
+          </div>
+          <button class="admin-btn btn-sync-cloud" onclick="testRailwayApiConnection()" style="height: 38px; align-self: flex-end;">
+            <span>Kiểm Tra Kết Nối Cloud</span>
+          </button>
+        </div>
+
+        <!-- LEADS TABLE -->
+        <div class="table-scroll-wrapper">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>Mã ID</th>
+                <th>Họ Tên</th>
+                <th>Doanh Nghiệp</th>
+                <th>Số Điện Thoại</th>
+                <th>Khóa Học</th>
+                <th>Thời Gian</th>
+                <th>Trạng Thái</th>
+              </tr>
+            </thead>
+            <tbody id="adminTableBody">
+              <!-- Rendered by JS -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION POPUP -->
+  <div class="toast-popup" id="toastNotification">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#53A7B8" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+    <div>
+      <div id="toastTitle" style="font-weight: 800; font-size: 0.95rem;">Thành Công!</div>
+      <div id="toastDesc" style="font-size: 0.85rem; opacity: 0.85;">Yêu cầu của bạn đã được ghi nhận.</div>
+    </div>
+  </div>
+
+  <!-- JAVASCRIPT LOGIC & DATABASE ENGINE -->
+  <script>
+    /* ==========================================================================
+       DATA DICTIONARY - TOÀN BỘ KHÓA ĐÀO TẠO TỪ GOOGLE SITES
+       ========================================================================== */
+    const COURSES_DATA = [
+      {
+        id: 1,
+        title: "Quản Lý Cơ Bản & Quản Lý Chuyên Sâu",
+        category: "manager",
+        targetText: "Dành cho Quản lý",
+        duration: "1 - 2 Ngày",
+        summary: "Trang bị tư duy chuyển hóa từ chuyên viên giỏi thành nhà quản lý xuất sắc, làm chủ các kỹ năng điều hành và phong cách lãnh đạo.",
+        objective: "Giúp người quản lý thấu hiểu vai trò, phát triển đội ngũ vững mạnh và tạo ra giá trị bền vững cho doanh nghiệp.",
+        tags: ["Lãnh đạo", "Điều hành", "Phát triển nhân viên", "Tư duy quản trị"],
+        modules: [
+          { title: "Module 1: Những kỹ năng cơ bản của nhà quản lý", desc: "Xác định rõ vai trò quản lý, kỹ năng lập kế hoạch công việc, phân công trách nhiệm và tổ chức nguồn lực." },
+          { title: "Module 2: Các tố chất và thái độ cần có của nhà quản trị", desc: "Tư duy chịu trách nhiệm (Ownership), thái độ tích cực, khả năng kiên định và xây dựng văn hóa tin cậy." },
+          { title: "Module 3: Chuyển hóa từ Quản lý (Manager) sang Lãnh đạo (Leader)", desc: "5 cấp độ lãnh đạo theo John Maxwell, kỹ năng truyền cảm hứng và dẫn dắt đội ngũ vượt qua thử thách." },
+          { title: "Module 4: Quản trị sự thay đổi và duy trì hiệu suất cao", desc: "Phương pháp tạo động lực dài hạn, giải quyết xung đột nội bộ và duy trì năng lượng tích cực trong nhóm." }
+        ],
+        outcome: "Học viên tự tin điều hành phòng ban, biết cách giao việc trúng người, giảm thiểu 80% xung đột và nâng cao hiệu suất phòng ban."
+      },
+      {
+        id: 2,
+        title: "Xây Dựng & Quản Lý KPI, Thẻ Điểm Cân Bằng (BSC)",
+        category: "manager",
+        targetText: "Dành cho Quản lý & HR",
+        duration: "2 Ngày",
+        summary: "Phương pháp thiết lập mục tiêu SMART, xây dựng bộ chỉ số KPI đo lường hiệu quả và triển khai Thẻ Điểm Cân Bằng (Balanced Scorecard).",
+        objective: "Liên kết mục tiêu chiến lược của công ty với mục tiêu từng phòng ban và cá nhân, giải quyết bài toán đo lường hiệu quả.",
+        tags: ["KPI", "Thẻ điểm cân bằng (BSC)", "Đo lường hiệu suất", "Chiến lược"],
+        modules: [
+          { title: "Module 1: Bản chất của KPI và 4 khía cạnh Thẻ Điểm Cân Bằng (BSC)", desc: "Hiểu sâu về Tài chính, Khách hàng, Quy trình nội bộ và Phát triển nhân sự theo mô hình chuẩn quốc tế." },
+          { title: "Module 2: Quy trình xây dựng cây mục tiêu và phân bổ chỉ số KPI", desc: "Từ mục tiêu công ty phân rã xuống phòng ban và từng vị trí nhân viên theo nguyên tắc SMART." },
+          { title: "Module 3: Các phương pháp quản lý, theo dõi và đo lường KPI thực tế", desc: "Thiết lập Dashboard báo cáo định kỳ, cách phát hiện điểm nghẽn và đưa ra giải pháp điều chỉnh kịp thời." },
+          { title: "Module 4: Đánh giá KPI gắn liền với chính sách tạo động lực", desc: "Cách tổ chức buổi đối thoại đánh giá minh bạch, xây dựng cơ chế thưởng phạt công bằng và thúc đẩy phát triển." }
+        ],
+        outcome: "Xây dựng được bộ từ điển KPI cho chính bộ phận của mình ngay tại lớp, sẵn sàng áp dụng vào thực tế doanh nghiệp."
+      },
+      {
+        id: 3,
+        title: "Giao Tiếp Hiệu Quả & Thuyết Trình Chuyên Nghiệp",
+        category: "all",
+        targetText: "Quản lý & Nhân viên",
+        duration: "1 Ngày cơ bản / 2 Ngày chuyên sâu",
+        summary: "Làm chủ nghệ thuật truyền tải thông điệp ngắn gọn, lắng nghe thấu cảm và thuyết trình tự tin chinh phục người nghe.",
+        objective: "Loại bỏ rào cản 'nói một đằng hiểu một nẻo' trong giao tiếp nội bộ và với đối tác khách hàng.",
+        tags: ["Giao tiếp", "Thuyết trình", "Lắng nghe thấu cảm", "Kỹ năng mềm"],
+        modules: [
+          { title: "Module 1: Phương thức truyền tải thông tin hiệu quả (Communication Mindset)", desc: "'Điều quan trọng không phải những gì tôi nói, mà là những gì bạn nghe và hiểu'. Nhận diện phong cách giao tiếp DISC." },
+          { title: "Module 2: Các phương pháp đạt hiệu quả cao nhất trong đối thoại", desc: "Kỹ năng đặt câu hỏi mở, lắng nghe chủ động (Active Listening) và phản hồi theo mô hình Sandwich / SBI." },
+          { title: "Module 3: Cấu trúc bài thuyết trình chuyên nghiệp theo mô hình PREP", desc: "Bố cục Point - Reason - Example - Point; cách mở đầu thu hút và kết bài truyền động lực." },
+          { title: "Module 4: Thực hành thuyết trình và giải quyết câu hỏi hóc búa", desc: "Luyện ngôn ngữ cơ thể, kiểm soát giọng nói, xử lý tình huống phản biện và làm chủ sân khấu." }
+        ],
+        outcome: "Giao tiếp tự tin, biết cách thuyết phục sếp và đồng nghiệp, trình bày báo cáo ngắn gọn, súc tích chỉ trong 3 - 5 phút."
+      },
+      {
+        id: 4,
+        title: "Quản Lý Thời Gian & Kỹ Thuật 'Thời Gian BĂNG'",
+        category: "all",
+        targetText: "Quản lý & Nhân viên",
+        duration: "1 Ngày",
+        summary: "Khai phá bí quyết làm việc hiệu suất cao: 'Vừa làm, vừa tận hưởng, vừa đạt kết quả tốt' với phương pháp Thời Gian Băng độc quyền.",
+        objective: "Giúp học viên làm chủ 24 giờ mỗi ngày, thoát khỏi trạng thái bận rộn vô nghĩa và giảm thiểu áp lực kiệt sức (Burnout).",
+        tags: ["Quản lý thời gian", "Năng suất", "Thời gian Băng", "Cân bằng cuộc sống"],
+        modules: [
+          { title: "Module 1: Xác định những yếu tố 'đánh cắp' thời gian của bạn", desc: "Nhận diện sự trì hoãn, sự gián đoạn vô hình, thói quen đa nhiệm (multitasking) và ma trận khẩn cấp vs quan trọng." },
+          { title: "Module 2: Các phương pháp quản lý thời gian kinh điển", desc: "Áp dụng Eisenhower Box, Pomodoro, Time-boxing và nguyên lý 80/20 (Pareto) vào công việc hằng ngày." },
+          { title: "Module 3: Phương pháp độc quyền: 'Thời Gian BĂNG'", desc: "Đóng băng khối thời gian vàng cho việc ưu tiên số 1; loại bỏ hoàn toàn các thông báo gây phân tâm." },
+          { title: "Module 4: Quản lý thời gian 'dài hơi' và cân bằng cuộc sống", desc: "Lập kế hoạch tuần, kế hoạch tháng và thói quen rà soát cuối ngày để luôn làm chủ tiến độ." }
+        ],
+        outcome: "Gia tăng ít nhất 30% năng suất làm việc, tiết kiệm 2 giờ mỗi ngày cho bản thân và gia đình."
+      },
+      {
+        id: 5,
+        title: "Đàm Phán & Thương Lượng Trong Kinh Doanh",
+        category: "manager",
+        targetText: "Quản lý & Chuyên viên",
+        duration: "2 Ngày",
+        summary: "Phương pháp thương lượng thực chiến dựa trên nguyên tắc Cùng Thắng (Win-Win) đúc kết từ hơn 10 năm kinh nghiệm mua bán quốc tế tại Decathlon.",
+        objective: "Trang bị bản lĩnh và kỹ thuật dẫn dắt bàn đàm phán, tối ưu lợi ích cho doanh nghiệp mà vẫn giữ gìn mối quan hệ đối tác.",
+        tags: ["Đàm phán", "Thương lượng", "Win-Win", "Mua hàng & Bán hàng"],
+        modules: [
+          { title: "Module 1: Các bước tiếp cận và nghiên cứu đối tác", desc: "Xác định mục tiêu đàm phán, tìm hiểu nhu cầu ẩn giấu của đối phương và phân tích điểm mạnh - điểm yếu." },
+          { title: "Module 2: Các bước chuẩn bị trước khi vào bàn đàm phán", desc: "Xác định BATNA (Giải pháp thay thế tốt nhất), ZOPA (Vùng thỏa thuận khả thi) và xây dựng kịch bản trao đổi." },
+          { title: "Module 3: Cách dẫn dắt và điều phối cuộc thương lượng", desc: "Nghệ thuật đưa ra đề xuất đầu tiên, kỹ thuật nhân nhượng có điều kiện và xử lý bế tắc trên bàn đàm phán." },
+          { title: "Module 4: Chốt thỏa thuận và theo dõi cam kết hợp đồng", desc: "Kỹ thuật chốt cam kết văn bản, quản trị rủi ro sau đàm phán và duy trì quan hệ lâu dài." }
+        ],
+        outcome: "Tự tin đàm phán giá cả, hợp đồng với nhà cung ứng và khách hàng, tối ưu từ 5% - 15% chi phí mua hàng."
+      },
+      {
+        id: 6,
+        title: "Xây Dựng & Quản Lý Dự Án Cùng Nhân Viên",
+        category: "manager",
+        targetText: "Dành cho Quản lý",
+        duration: "2 Ngày",
+        summary: "Đúc kết từ chương trình đào tạo quản lý dự án cho Hữu Toàn Group: Cách thu hút và cùng nhân viên 'sống' trọn vẹn với dự án.",
+        objective: "Biến kế hoạch trên giấy thành kết quả thực tế, quản trị tiến độ chặt chẽ mà không phải thúc ép nhân viên.",
+        tags: ["Quản lý dự án", "Tiến độ", "Làm việc nhóm", "Thực thi"],
+        modules: [
+          { title: "Module 1: Các bước xây dựng và khởi động dự án", desc: "Xác định phạm vi (Scope), mục tiêu đo lường, ngân sách và cấu trúc phân chia công việc (WBS)." },
+          { title: "Module 2: Cách thu hút nhân viên 'cùng làm' dự án", desc: "Tạo sự đồng thuận (Buy-in), phân vai đúng sở trường và trao quyền rõ ràng cho từng thành viên." },
+          { title: "Module 3: Cách cùng nhân viên 'sống' với dự án", desc: "Tổ chức họp Stand-up ngắn 10 phút, kiểm soát đường găng (Critical Path) và ứng phó sự cố phát sinh." },
+          { title: "Module 4: Nghiệm thu, tổng kết bài học kinh nghiệm (Post-mortem)", desc: "Đánh giá kết quả so với kế hoạch ban đầu, vinh danh đội ngũ và chuẩn hóa quy trình cho các dự án sau." }
+        ],
+        outcome: "Làm chủ tiến độ dự án, đưa dự án về đích đúng hạn, đúng ngân sách và gắn kết tinh thần đồng đội."
+      },
+      {
+        id: 7,
+        title: "Phỏng Vấn & Tuyển Dụng Nhân Tài",
+        category: "hr",
+        targetText: "Quản lý & Nhân sự HR",
+        duration: "1 Ngày",
+        summary: "Quy trình tuyển dụng chuẩn mực: Cách xác định chân dung ứng viên, phỏng vấn hành vi STAR và chọn đúng người phù hợp văn hóa.",
+        objective: "Tránh tuyển nhầm người gây tốn kém chi phí và thời gian đào tạo cho doanh nghiệp.",
+        tags: ["Tuyển dụng", "Phỏng vấn STAR", "Thu hút nhân tài", "HR"],
+        modules: [
+          { title: "Module 1: Cách xác định nhu cầu và chân dung ứng viên", desc: "Phân tích công việc, lập bảng tiêu chí năng lực (ASK: Thái độ - Kỹ năng - Kiến thức) và viết JD chuẩn." },
+          { title: "Module 2: Các bước chuẩn bị 'Tiền Tuyển Dụng'", desc: "Kỹ năng sàng lọc CV hiệu quả trong 30 giây, thiết kế bộ câu hỏi tình huống và chuẩn bị tâm lý người phỏng vấn." },
+          { title: "Module 3: Cách dẫn dắt buổi phỏng vấn chuyên nghiệp", desc: "Áp dụng kỹ thuật STAR (Tình huống - Nhiệm vụ - Hành động - Kết quả) để bóc tách sự thật và đánh giá thái độ." },
+          { title: "Module 4: Đánh giá sau phỏng vấn và Onboarding", desc: "Ma trận cho điểm khách quan, đưa ra Offer thư tuyển dụng chuyên nghiệp và quy trình hội nhập 90 ngày đầu." }
+        ],
+        outcome: "Nâng cao tỷ lệ giữ chân nhân sự mới trên 85%, chọn đúng ứng viên có thái độ phù hợp với văn hóa công ty."
+      },
+      {
+        id: 8,
+        title: "Đánh Giá Cuối Năm, Định Hướng Phát Triển & Phương Án Hành Động",
+        category: "manager",
+        targetText: "Dành cho Quản lý & HR",
+        duration: "1 Ngày",
+        summary: "Biến kỳ đánh giá cuối năm (Performance Review) từ áp lực thành cơ hội thúc đẩy nhân viên bứt phá và gắn kết dài hạn.",
+        objective: "Học cách phản hồi mang tính xây dựng, lắng nghe tâm tư và cùng nhân viên thiết lập kế hoạch hành động năm mới.",
+        tags: ["Đánh giá cuối năm", "Phát triển nhân sự", "Phản hồi xây dựng", "Lộ trình thăng tiến"],
+        modules: [
+          { title: "Module 1: Cách hiểu nhân viên và chuẩn bị dữ liệu đánh giá", desc: "Thu thập minh chứng định lượng lẫn định tính, loại bỏ định kiến cá nhân và hiệu ứng hào quang." },
+          { title: "Module 2: Kỹ năng phản hồi mang tính xây dựng (Constructive Feedback)", desc: "Mô hình SBI (Situation - Behavior - Impact), cách nói về điểm yếu mà không làm tổn thương tinh thần nhân viên." },
+          { title: "Module 3: Các bước giúp nhân viên xây dựng lộ trình phát triển (IDP)", desc: "Cùng nhân viên xác định mục tiêu học tập, kỹ năng cần bổ sung và lộ trình thăng tiến cụ thể." },
+          { title: "Module 4: Thiết lập phương án hành động và cam kết đồng hành", desc: "Ký cam kết mục tiêu năm mới, xây dựng nhịp rà soát định kỳ hàng quý (Quarterly Review)." }
+        ],
+        outcome: "Buổi đánh giá trở nên cởi mở, nhân viên tự giác nhận trách nhiệm và hào hứng với kế hoạch phát triển năm mới."
+      },
+      {
+        id: 9,
+        title: "Tổ Chức Cuộc Họp Hiệu Quả & 'Nhân Viên Làm Chủ Cuộc Họp'",
+        category: "hr",
+        targetText: "Dành cho Quản lý & HR",
+        duration: "1 Ngày",
+        summary: "Xóa bỏ 'căn bệnh họp triền miên không hồi kết'. Trao quyền để nhân viên chủ động dẫn dắt và đưa ra giải pháp trong cuộc họp.",
+        objective: "Tiết kiệm 50% thời gian hội họp của doanh nghiệp và tăng gấp đôi tính cam kết hành động sau mỗi cuộc họp.",
+        tags: ["Tổ chức cuộc họp", "Làm chủ cuộc họp", "Tương tác nhóm", "Tiết kiệm thời gian"],
+        modules: [
+          { title: "Module 1: Phân loại các cuộc họp và nguyên tắc 'Cần hay Không cần họp'", desc: "Họp thông báo, họp giải quyết vấn đề, họp sáng tạo. Khi nào nên gửi email thay vì triệu tập họp." },
+          { title: "Module 2: Cách lên kế hoạch cuộc họp chuẩn mực", desc: "Chuẩn bị Agenda trước 24h, giới hạn thời gian phát biểu và xác định rõ mục tiêu đầu ra cần đạt được." },
+          { title: "Module 3: Phương pháp 'Nhân viên làm chủ cuộc họp'", desc: "Kỹ thuật xoay vòng người chủ trì (Facilitator), cách khuyến khích thành viên ít nói đóng góp ý kiến." },
+          { title: "Module 4: Biên bản hành động và theo dõi kết quả sau cuộc họp", desc: "Mẫu Action Item 3W: Who - What - When, cách kiểm tra tiến độ cam kết mà không cần nhắc nhở." }
+        ],
+        outcome: "Mọi cuộc họp đều kết thúc đúng giờ với danh sách hành động rõ ràng và người chịu trách nhiệm cụ thể."
+      },
+      {
+        id: 10,
+        title: "Kỹ Năng Lắng Nghe Chủ Động & Giao Tiếp Thấu Cảm",
+        category: "staff",
+        targetText: "Nhân viên & Quản lý",
+        duration: "1 Ngày",
+        summary: "Chương trình chuyên đề từng đào tạo cho CLB Nhân Sự - Khởi Nghiệp UEH: Khai mở sức mạnh của sự thấu cảm trong công việc và cuộc sống.",
+        objective: "Biết cách lắng nghe để thấu hiểu người khác trước khi mong muốn được người khác thấu hiểu.",
+        tags: ["Lắng nghe chủ động", "Giao tiếp thấu cảm", "Kỹ năng mềm", "Gắn kết"],
+        modules: [
+          { title: "Module 1: 5 cấp độ lắng nghe trong giao tiếp", desc: "Từ lờ đi, nghe giả vờ, nghe chọn lọc, nghe chú ý đến lắng nghe thấu cảm từ trái tim." },
+          { title: "Module 2: Rào cản tâm lý khi lắng nghe và cách vượt qua", desc: "Thói quen ngắt lời, phán xét sớm, suy bụng ta ra bụng người và cách giữ tâm thế khách quan." },
+          { title: "Module 3: Kỹ thuật phản chiếu (Mirroring) và diễn giải lại (Paraphrasing)", desc: "Cách thể hiện sự đồng cảm qua ánh mắt, tư thế và câu từ xác nhận để đối phương cảm nhận được sự tôn trọng." },
+          { title: "Module 4: Ứng dụng giao tiếp thấu cảm giải quyết khiếu nại khách hàng", desc: "Xoa dịu cơn giận dữ của khách hàng và biến khách hàng bức xúc thành người đồng hành trung thành." }
+        ],
+        outcome: "Cải thiện sâu sắc các mối quan hệ đồng nghiệp, hóa giải mâu thuẫn phòng ban và chăm sóc khách hàng xuất sắc."
+      }
+    ];
+
+    /* ==========================================================================
+       BLOG ARTICLES DATA - TOÀN BỘ BÀI VIẾT TỪ GOOGLE SITES
+       ========================================================================== */
+    const BLOG_ARTICLES = [
+      {
+        id: 1,
+        title: "CÁC PHƯƠNG PHÁP QUẢN LÝ THỜI GIAN HỮU ÍCH",
+        category: "Quản Lý Thời Gian",
+        excerpt: "Tại sao có những người làm được rất nhiều việc nhưng họ khá thoải mái, có thời gian cho gia đình và phát triển bản thân, trong khi người khác lại quần quật cả ngày không hết việc?...",
+        content: `
+          <p>Tại sao có những người làm được rất nhiều việc nhưng họ khá thoải mái, cũng có thời gian dành cho gia đình, phát triển bản thân và những điều mình thích. Nhưng lại cũng có một số người làm quần quật từ sáng đến tối mà chưa bao giờ hoàn thành xong công việc?</p>
+          <br>
+          <p>Sự khác biệt lớn nhất không nằm ở số lượng giờ chúng ta có, vì tất cả chúng ta đều chỉ có 24 giờ mỗi ngày. Sự khác biệt nằm ở <strong>cách thức quản trị sự tập trung và sự ưu tiên</strong>.</p>
+          <br>
+          <p><strong>1. Nguyên tắc Ma Trận Eisenhower:</strong> Hãy phân loại toàn bộ đầu việc của bạn thành 4 ô: Khẩn cấp & Quan trọng (Làm ngay); Quan trọng nhưng Không khẩn cấp (Lên lịch làm tập trung); Khẩn cấp nhưng Không quan trọng (Ủy quyền); Không khẩn cấp & Không quan trọng (Loại bỏ ngay).</p>
+          <br>
+          <p><strong>2. Kỹ thuật "Thời Gian BĂNG":</strong> Đây là phương pháp mà Triết luôn khuyên các bạn học viên áp dụng. Trong một ngày, hãy chọn ra một khối thời gian từ 90 đến 120 phút – gọi là "Khối Băng". Trong thời gian này, bạn tắt toàn bộ thông báo điện thoại, email, đóng cửa phòng và chỉ giải quyết duy nhất 1 nhiệm vụ quan trọng nhất. Khi bạn bảo vệ khối thời gian này như một tảng băng không thể bị tan chảy, năng suất làm việc của bạn sẽ tăng gấp 3 lần.</p>
+          <br>
+          <p><strong>3. Học cách từ chối lịch sự:</strong> Mỗi khi bạn nói "Có" với một việc không quan trọng, bạn đang nói "Không" với những mục tiêu cuộc đời mình.</p>
+        `
+      },
+      {
+        id: 2,
+        title: "NHỮNG ĐIỀU BẠN CẦN CÓ ĐỂ GIAO TIẾP HIỆU QUẢ",
+        category: "Kỹ Năng Giao Tiếp",
+        excerpt: "“Điều quan trọng trong giao tiếp không phải những gì tôi nói, mà là những điều bạn nghe và hiểu những điều tôi muốn” - LMT...",
+        content: `
+          <p style="font-size: 1.1rem; font-style: italic; color: #2B5D68; margin-bottom: 16px;">
+            “Điều quan trọng trong giao tiếp không phải những gì tôi nói, mà là những điều bạn nghe và hiểu những điều tôi muốn.” – Lê Minh Triết
+          </p>
+          <p>Trong rất nhiều khóa đào tạo cho các bạn trẻ và quản lý doanh nghiệp, Triết nhận thấy có một ngộ nhận rất phổ biến: Nhiều người nghĩ giao tiếp tốt nghĩa là phải nói thật hay, nói thật nhiều và dùng từ ngữ hoa mỹ. Nhưng thực tế hoàn toàn ngược lại.</p>
+          <br>
+          <p><strong>Giao tiếp hiệu quả bắt đầu từ việc LẮNG NGHE:</strong> Bạn không thể thuyết phục một người khi bạn chưa hiểu họ đang trăn trở điều gì. Hãy học cách lắng nghe không phán xét, đặt những câu hỏi gợi mở và xác nhận lại thông điệp.</p>
+          <br>
+          <p><strong>Giao tiếp bằng sự RÕ RÀNG:</strong> Đừng bao giờ giả định rằng đối phương "tự hiểu". Trong môi trường công sở, mọi yêu cầu cần có tiêu chuẩn rõ ràng: Kết quả cụ thể là gì? Thời hạn hoàn thành là khi nào? Ai chịu trách nhiệm?</p>
+          <br>
+          <p><strong>Giao tiếp bằng sự THẤU CẢM:</strong> Đặt mình vào vị trí của người nghe để chọn cách diễn đạt phù hợp. Khi giao tiếp xuất phát từ sự tôn trọng chân thành, mọi mâu thuẫn đều có thể tìm thấy tiếng nói chung.</p>
+        `
+      },
+      {
+        id: 3,
+        title: "6 ĐIỀU KHẮC GHI NẾU MUỐN GIAO VIỆC HIỆU QUẢ",
+        category: "Năng Lực Lãnh Đạo",
+        excerpt: "Muốn nhân viên làm việc hiệu quả thì trên hết người quản lý cần phải có óc quan sát, theo dõi xem điểm mạnh, điểm yếu của từng nhân viên là gì...",
+        content: `
+          <p>Giao việc là một trong những thước đo rõ nét nhất cho năng lực của một nhà quản lý. Giao việc sai không chỉ khiến công việc đổ vỡ mà còn làm thui chột động lực của nhân viên. Dưới đây là 6 điều người quản lý cần khắc ghi:</p>
+          <br>
+          <p><strong>1. Giao việc phù hợp năng lực và thái độ từng nhân viên:</strong> Người quản lý cần có óc quan sát sắc bén để biết ai có thế mạnh về tư duy logic, ai giỏi về đối ngoại, ai tỉ mỉ chi tiết. Đừng bao giờ bắt một chú cá phải thi leo cây.</p>
+          <br>
+          <p><strong>2. Làm rõ "Tại sao" (Why) trước khi nói "Làm cái gì" (What):</strong> Nhân viên sẽ cống hiến hết mình khi họ hiểu ý nghĩa công việc họ đang làm đóng góp thế nào vào mục tiêu chung của công ty.</p>
+          <br>
+          <p><strong>3. Xác định rõ tiêu chuẩn đầu ra (Definition of Done):</strong> Đừng nói chung chung "làm cho đẹp", hãy đưa ra tiêu chí đo lường cụ thể.</p>
+          <br>
+          <p><strong>4. Trao quyền đi đôi với nguồn lực:</strong> Giao trách nhiệm thì phải trao quyền hạn và cung cấp đủ công cụ, tài liệu để nhân viên chủ động thực thi.</p>
+          <br>
+          <p><strong>5. Thiết lập các điểm kiểm soát tiến độ (Checkpoints):</strong> Không buông lỏng hoàn toàn nhưng cũng không can thiệp vi mô (micromanagement). Hãy thỏa thuận các mốc cập nhật ngắn.</p>
+          <br>
+          <p><strong>6. Phản hồi và ghi nhận kịp thời:</strong> Khi nhân viên làm tốt, hãy khen ngợi công khai. Khi có sai sót, hãy hướng dẫn riêng tư để cùng tìm giải pháp khắc phục.</p>
+        `
+      },
+      {
+        id: 4,
+        title: "KỸ NĂNG QUẢN LÝ THỜI GIAN LÀ GÌ?",
+        category: "Quản Lý Thời Gian",
+        excerpt: "Bạn đã từng thắc mắc tại sao chúng ta đều có 24 giờ một ngày nhưng nhiều người dường như thời gian sử dụng không hết, trong khi chúng ta chớp mắt đã hết ngày?...",
+        content: `
+          <p>Bạn đã từng thắc mắc tại sao chúng ta đều có 24 giờ một ngày nhưng nhiều người dường như thời gian sử dụng không hết, trong khi chúng ta chớp mắt một cái đã qua một ngày và danh sách việc cần làm vẫn còn nguyên vẹn?</p>
+          <br>
+          <p>Quản lý thời gian thực chất không phải là quản lý đồng hồ chạy nhanh hay chậm, mà là <strong>nghệ thuật quản trị sự lựa chọn</strong>. Mỗi giây phút trôi qua, bạn quyết định dành sự chú ý của mình cho điều gì: Lướt mạng xã hội vô định hay tập trung hoàn thành bản đề xuất chiến lược?</p>
+          <br>
+          <p>Người làm chủ thời gian là người biết phân biệt giữa "Bận rộn" (Busy) và "Hiệu quả" (Productive). Bận rộn chỉ là chuyển động cơ học, còn hiệu quả là tiến gần hơn đến mục tiêu thực sự.</p>
+        `
+      },
+      {
+        id: 5,
+        title: "5 CẤP ĐỘ LÃNH ĐẠO CỦA JOHN MAXWELL",
+        category: "Phát Triển Lãnh Đạo",
+        excerpt: "John Maxwell là tác giả nổi tiếng người Mỹ về kỹ năng lãnh đạo. 5 cấp độ lãnh đạo theo Maxwell là kim chỉ nam giúp bạn định vị năng lực điều hành...",
+        content: `
+          <p>John Maxwell là một tác giả nổi tiếng người Mỹ với những cuốn sách kinh điển về kỹ năng lãnh đạo. Mô hình 5 cấp độ lãnh đạo của ông là kim chỉ nam giúp mọi nhà quản lý tự soi chiếu hành trình của mình:</p>
+          <br>
+          <p><strong>Cấp độ 1: Chức vị (Position):</strong> Mọi người đi theo bạn vì họ PHẢI làm vậy. Quyền lực của bạn đến từ cái danh trên danh thiếp. Đây là cấp độ thấp nhất.</p>
+          <br>
+          <p><strong>Cấp độ 2: Sự chấp thuận (Permission):</strong> Mọi người đi theo bạn vì họ MUỐN làm vậy. Bạn xây dựng được mối quan hệ tin cậy và sự tôn trọng với đội ngũ.</p>
+          <br>
+          <p><strong>Cấp độ 3: Năng suất (Production):</strong> Mọi người đi theo bạn vì NHỮNG GÌ BẠN ĐÃ LÀM ĐƯỢC CHO CÔNG TY. Bạn tạo ra kết quả thực tế và dẫn dắt đội ngũ chiến thắng.</p>
+          <br>
+          <p><strong>Cấp độ 4: Phát triển con người (People Development):</strong> Mọi người đi theo bạn vì NHỮNG GÌ BẠN ĐÃ LÀM CHO HỌ. Bạn đào tạo, cố vấn và giúp nhân viên của mình trở thành những nhà lãnh đạo mới.</p>
+          <br>
+          <p><strong>Cấp độ 5: Đỉnh cao (Pinnacle):</strong> Mọi người tôn kính bạn vì BẠN LÀ AI VÀ NHỮNG GÌ BẠN ĐẠI DIỆN. Đây là đỉnh cao của sự cống hiến và tầm ảnh hưởng sâu rộng.</p>
+        `
+      },
+      {
+        id: 6,
+        title: "KHẢ NĂNG TỰ NHẬN THỨC BẢN THÂN LÀ GÌ?",
+        category: "Tư Duy & Mindset",
+        excerpt: "Để trở thành một nhà lãnh đạo giỏi, một điều kiện tiên quyết trong rất nhiều điều đó là khả năng tự nhận thức bản thân (Self-awareness)...",
+        content: `
+          <p>Để trở thành một nhà lãnh đạo xuất sắc, một điều kiện tiên quyết chúng ta cần phải có đó là <strong>khả năng tự nhận thức bản thân (Self-awareness)</strong>. Vậy tự nhận thức là gì mà nó lại là nền móng cốt tử của một nhà lãnh đạo?</p>
+          <br>
+          <p>Tự nhận thức là khả năng nhìn nhận một cách trung thực về cảm xúc, niềm tin, điểm mạnh, điểm yếu và các giới hạn của chính mình mà không tự lừa dối bản thân.</p>
+          <br>
+          <p>Một người lãnh đạo thiếu tự nhận thức sẽ rất dễ đổ lỗi cho nhân viên khi có sự cố, không nhận ra sự độc đoán của mình và tạo nên môi trường làm việc ngột ngạt. Ngược lại, người có năng lực tự nhận thức cao sẽ luôn giữ được sự khiêm nhường, biết lắng nghe phản hồi trái chiều và không ngừng hoàn thiện bản thân mỗi ngày.</p>
+        `
+      }
+    ];
+
+    /* ==========================================================================
+       DATABASE INITIALIZATION & STORAGE ENGINE
+       Hỗ trợ cả LocalStorage, database.json tải về và kết nối REST API Railway
+       ========================================================================== */
+    const DEFAULT_LEADS = [
+      {
+        id: "LMT-LEAD-001",
+        fullName: "Nguyễn Minh Tuấn",
+        company: "Công ty CP Sản xuất May mặc Tân Bình",
+        phone: "0918123456",
+        email: "tuan.nguyen@tanbinhgarment.vn",
+        course: "Quản Lý Cơ Bản & Quản Lý Chuyên Sâu",
+        headcount: 25,
+        notes: "Muốn đào tạo nâng cao kỹ năng giao việc và đánh giá cho đội ngũ quản lý xưởng may.",
+        createdAt: "2026-10-10T08:30:00.000Z",
+        status: "Chờ tư vấn"
+      },
+      {
+        id: "LMT-LEAD-002",
+        fullName: "Trần Thị Mai Phương",
+        company: "Tập đoàn Phân phối Logistics Miền Nam",
+        phone: "0988765432",
+        email: "phuong.tran@southernlog.com.vn",
+        course: "Xây Dựng & Quản Lý KPI, Thẻ Điểm Cân Bằng (BSC)",
+        headcount: 15,
+        notes: "Cần khảo sát 1 ngày thực tế và thiết lập bộ từ điển KPI cho khối kho vận và điều phối xe.",
+        createdAt: "2026-10-10T09:15:00.000Z",
+        status: "Đã liên hệ"
+      },
+      {
+        id: "LMT-LEAD-003",
+        fullName: "Lê Hoàng Quân",
+        company: "Công ty TNHH Giải pháp Công nghệ Việt",
+        phone: "0903998877",
+        email: "quan.lh@viettechsol.com",
+        course: "Giao Tiếp Hiệu Quả & Thuyết Trình",
+        headcount: 30,
+        notes: "Đào tạo cho toàn bộ kỹ sư và nhân viên kinh doanh về kỹ năng lắng nghe và thuyết trình PREP.",
+        createdAt: "2026-10-10T10:05:00.000Z",
+        status: "Đang xếp lịch"
+      }
+    ];
+
+    function getStoredLeads() {
+      try {
+        const raw = localStorage.getItem("LMT_TRAINING_LEADS");
+        if (raw) {
+          const parsed = JSON.parse(raw);
+          if (Array.isArray(parsed) && parsed.length > 0) return parsed;
+        }
+      } catch (e) {
+        console.warn("Storage read error:", e);
+      }
+      return DEFAULT_LEADS;
+    }
+
+    function saveStoredLeads(leads) {
+      try {
+        localStorage.setItem("LMT_TRAINING_LEADS", JSON.stringify(leads));
+      } catch (e) {
+        console.warn("Storage save error:", e);
+      }
+      updateBadgeCounts();
+    }
+
+    function updateBadgeCounts() {
+      const leads = getStoredLeads();
+      const count = leads.length;
+      const b1 = document.getElementById("headerBadge");
+      const b2 = document.getElementById("floatBadge");
+      const b3 = document.getElementById("adminTotalLeads");
+      if (b1) b1.innerText = count;
+      if (b2) b2.innerText = count;
+      if (b3) b3.innerText = count;
+    }
+
+    /* ==========================================================================
+       RENDER FUNCTIONS - COURSES, BLOG, ESTIMATOR
+       ========================================================================== */
+    let currentFilter = 'all';
+
+    function renderCourses(courses) {
+      const container = document.getElementById("coursesGridContainer");
+      if (!container) return;
+
+      if (!courses || courses.length === 0) {
+        container.innerHTML = `
+          <div style="grid-column: 1 / -1; text-align: center; padding: 48px; background: #fff; border-radius: var(--radius-md);">
+            <h3 style="color: var(--color-primary-dark); margin-bottom: 8px;">Không tìm thấy khóa học phù hợp</h3>
+            <p style="color: var(--text-muted);">Vui lòng thử tìm với từ khóa khác hoặc bấm nút "Tất Cả Khóa Học".</p>
+          </div>
+        `;
+        return;
+      }
+
+      container.innerHTML = courses.map(course => {
+        let badgeClass = "badge-manager";
+        if (course.category === "staff") badgeClass = "badge-staff";
+        else if (course.category === "hr") badgeClass = "badge-hr";
+
+        return `
+          <div class="course-card" onclick="openCourseDetailModal(${course.id})">
+            <div class="course-card-body">
+              <div class="course-meta-strip">
+                <span class="target-badge ${badgeClass}">${course.targetText}</span>
+                <span class="course-duration-badge">⏱️ ${course.duration}</span>
+              </div>
+              <h3 class="course-title">${course.title}</h3>
+              <p class="course-desc">${course.summary}</p>
+              <div class="course-tags">
+                ${course.tags.map(t => `<span class="course-tag">#${t}</span>`).join('')}
+              </div>
+            </div>
+            <div class="course-card-footer">
+              <span class="btn-view-syllabus">
+                <span>Xem Đề Cương</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </span>
+              <button class="btn-course-enroll" onclick="event.stopPropagation(); quickEnrollCourse('${course.title}')">
+                Đăng Ký
+              </button>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function filterCourses(category, btnElement) {
+      currentFilter = category;
+      if (btnElement) {
+        document.querySelectorAll('.filter-tab').forEach(tab => tab.classList.remove('active'));
+        btnElement.classList.add('active');
+      }
+      
+      const searchInput = document.getElementById("courseSearchInput");
+      if (searchInput) searchInput.value = "";
+
+      let filtered = COURSES_DATA;
+      if (category !== 'all') {
+        filtered = COURSES_DATA.filter(c => c.category === category || (category === 'manager' && c.category === 'all') || (category === 'staff' && c.category === 'all'));
+      }
+      renderCourses(filtered);
+    }
+
+    function searchCourses() {
+      const query = document.getElementById("courseSearchInput").value.trim().toLowerCase();
+      let results = COURSES_DATA;
+
+      if (currentFilter !== 'all') {
+        results = results.filter(c => c.category === currentFilter || c.category === 'all');
+      }
+
+      if (query) {
+        results = results.filter(c => 
+          c.title.toLowerCase().includes(query) ||
+          c.summary.toLowerCase().includes(query) ||
+          c.tags.some(t => t.toLowerCase().includes(query)) ||
+          c.targetText.toLowerCase().includes(query)
+        );
+      }
+      renderCourses(results);
+    }
+
+    function renderBlogArticles() {
+      const container = document.getElementById("blogGridContainer");
+      if (!container) return;
+
+      container.innerHTML = BLOG_ARTICLES.map(art => `
+        <div class="blog-card" onclick="openBlogModal(${art.id})">
+          <div class="blog-card-header">
+            <span class="blog-category-tag">${art.category}</span>
+            <h3 class="blog-card-title">${art.title}</h3>
+          </div>
+          <p class="blog-card-excerpt">${art.excerpt}</p>
+          <div class="blog-card-footer">
+            <span>Đọc Toàn Bộ Bài Viết</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    /* ==========================================================================
+       ESTIMATOR LOGIC
+       ========================================================================== */
+    let estimatorTarget = 'manager';
+
+    function initEstimatorChecklist() {
+      const container = document.getElementById("estimatorChecklist");
+      if (!container) return;
+
+      container.innerHTML = COURSES_DATA.map((c, i) => `
+        <label class="check-label">
+          <input type="checkbox" value="${c.id}" ${[1, 2, 4].includes(c.id) ? 'checked' : ''} onchange="updateEstimator()">
+          <span>${c.title}</span>
+        </label>
+      `).join('');
+      updateEstimator();
+    }
+
+    function selectEstimatorTarget(target, element) {
+      estimatorTarget = target;
+      document.querySelectorAll('.estimator-target-radios .radio-card').forEach(c => c.classList.remove('selected'));
+      element.classList.add('selected');
+
+      const checkboxes = document.querySelectorAll('#estimatorChecklist input');
+      checkboxes.forEach(cb => {
+        const id = parseInt(cb.value);
+        const course = COURSES_DATA.find(c => c.id === id);
+        if (target === 'all') {
+          cb.checked = true;
+        } else if (target === 'manager') {
+          cb.checked = (course && course.category === 'manager') || id === 1 || id === 2 || id === 6;
+        } else if (target === 'staff') {
+          cb.checked = (course && course.category === 'staff') || id === 3 || id === 4 || id === 10;
+        }
+      });
+      updateEstimator();
+    }
+
+    function updateEstimator() {
+      const checkedBoxes = document.querySelectorAll('#estimatorChecklist input:checked');
+      const count = checkedBoxes.length;
+      
+      const countEl = document.getElementById("resCourseCount");
+      const summaryEl = document.getElementById("resCourseSummary");
+      const durationEl = document.getElementById("resDuration");
+      const coachingEl = document.getElementById("resCoaching");
+
+      if (countEl) countEl.innerText = `${count} Khóa học`;
+
+      let durationText = `${Math.max(1, Math.round(count * 1.2))} Ngày Đào Tạo`;
+      let coachingBuoi = Math.max(2, count * 2);
+
+      if (durationEl) durationEl.innerText = durationText;
+      if (coachingEl) coachingEl.innerText = `2 Tháng (${coachingBuoi} buổi coaching 1:1 & nhóm)`;
+
+      if (summaryEl) {
+        if (count === 0) summaryEl.innerText = "Chưa chọn khóa học nào";
+        else if (count <= 2) summaryEl.innerText = `Gói Đào Tạo Trọng Tâm (${count} Khóa)`;
+        else if (count <= 5) summaryEl.innerText = `Gói Nâng Cao Năng Lực (${count} Khóa)`;
+        else summaryEl.innerText = `Lộ Trình Đào Tạo Toàn Diện (${count} Khóa)`;
+      }
+    }
+
+    function applyEstimatorToForm() {
+      const checkedBoxes = document.querySelectorAll('#estimatorChecklist input:checked');
+      const titles = Array.from(checkedBoxes).map(cb => {
+        const c = COURSES_DATA.find(i => i.id === parseInt(cb.value));
+        return c ? c.title : '';
+      }).filter(Boolean);
+
+      const notesField = document.getElementById("leadNotes");
+      if (notesField) {
+        notesField.value = `[Đề xuất từ công cụ]: Doanh nghiệp quan tâm ${titles.length} khóa: ${titles.join(', ')}. Cần tư vấn lộ trình và báo giá chi tiết.`;
+      }
+      document.getElementById("contact").scrollIntoView({ behavior: 'smooth' });
+      showToast("Đã nạp lộ trình vào form!", "Vui lòng hoàn tất số điện thoại và họ tên để gửi yêu cầu.");
+    }
+
+    /* ==========================================================================
+       MODAL CONTROLLERS & FORM SUBMISSION
+       ========================================================================== */
+    let currentModalCourse = null;
+
+    function openCourseDetailModal(courseId) {
+      const course = COURSES_DATA.find(c => c.id === courseId);
+      if (!course) return;
+
+      currentModalCourse = course;
+      document.getElementById("modalTargetBadge").innerText = course.targetText.toUpperCase();
+      document.getElementById("modalCourseTitle").innerText = course.title;
+      document.getElementById("modalCourseObjective").innerText = course.objective;
+      document.getElementById("modalCourseOutcome").innerText = course.outcome;
+
+      const moduleContainer = document.getElementById("modalModuleList");
+      moduleContainer.innerHTML = course.modules.map(m => `
+        <div class="module-item">
+          <div class="module-header">${m.title}</div>
+          <div class="module-content">${m.desc}</div>
+        </div>
+      `).join('');
+
+      document.getElementById("courseDetailModal").classList.add("active");
+      document.body.style.overflow = "hidden";
+    }
+
+    function openBlogModal(blogId) {
+      const blog = BLOG_ARTICLES.find(b => b.id === blogId);
+      if (!blog) return;
+
+      document.getElementById("blogModalCategory").innerText = blog.category.toUpperCase();
+      document.getElementById("blogModalTitle").innerText = blog.title;
+      document.getElementById("blogModalContent").innerHTML = blog.content;
+
+      document.getElementById("blogDetailModal").classList.add("active");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeModal(modalId) {
+      const m = document.getElementById(modalId);
+      if (m) m.classList.remove("active");
+      document.body.style.overflow = "auto";
+    }
+
+    function handleModalOverlayClick(e, modalId) {
+      if (e.target.id === modalId) {
+        closeModal(modalId);
+      }
+    }
+
+    function quickEnrollCourse(courseTitle) {
+      const select = document.getElementById("leadCourse");
+      if (select) {
+        let found = false;
+        for (let i = 0; i < select.options.length; i++) {
+          if (select.options[i].value === courseTitle) {
+            select.selectedIndex = i;
+            found = true;
+            break;
+          }
+        }
+        if (!found) {
+          const opt = new Option(courseTitle, courseTitle);
+          select.add(opt);
+          select.value = courseTitle;
+        }
+      }
+      document.getElementById("contact").scrollIntoView({ behavior: 'smooth' });
+      document.getElementById("leadFullName").focus();
+      showToast("Đã chọn khóa học!", `Bạn đã chọn: "${courseTitle}". Hãy điền thông tin để hoàn tất.`);
+    }
+
+    function registerCurrentModalCourse() {
+      if (currentModalCourse) {
+        closeModal('courseDetailModal');
+        quickEnrollCourse(currentModalCourse.title);
+      }
+    }
+
+    /* ==========================================================================
+       LEAD SUBMISSION & RAILWAY / GITHUB API SYNC
+       ========================================================================== */
+    async function handleLeadSubmit(e) {
+      e.preventDefault();
+      const fullName = document.getElementById("leadFullName").value.trim();
+      const phone = document.getElementById("leadPhone").value.trim();
+      const email = document.getElementById("leadEmail").value.trim();
+      const company = document.getElementById("leadCompany").value.trim();
+      const course = document.getElementById("leadCourse").value;
+      const notes = document.getElementById("leadNotes").value.trim();
+
+      const newLead = {
+        id: `LMT-LEAD-${String(Date.now()).slice(-4)}`,
+        fullName,
+        company: company || "Cá nhân / Doanh nghiệp",
+        phone,
+        email: email || "Chưa cung cấp",
+        course,
+        notes,
+        createdAt: new Date().toISOString(),
+        status: "Chờ tư vấn"
+      };
+
+      // 1. Save locally in browser
+      const leads = getStoredLeads();
+      leads.unshift(newLead);
+      saveStoredLeads(leads);
+
+      // 2. Try to sync to Railway backend API if available
+      const apiUrl = getRailwayApiUrl();
+      if (apiUrl) {
+        try {
+          fetch(apiUrl, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(newLead)
+          }).then(res => res.json()).then(data => {
+            console.log("Synced to Cloud Backend:", data);
+          }).catch(err => {
+            console.warn("Cloud sync notice:", err);
+          });
+        } catch (err) {
+          console.warn("Fetch exception:", err);
+        }
+      }
+
+      showToast(`Cảm ơn bạn ${fullName}!`, "Yêu cầu tư vấn đã được ghi nhận vào hệ thống. LMT Training sẽ liên hệ trong 24 giờ!");
+      e.target.reset();
+    }
+
+    /* ==========================================================================
+       ADMIN PORTAL & DATABASE MANAGER (EXPORT JSON & CSV FOR GITHUB/RAILWAY)
+       ========================================================================== */
+    function openAdminModal() {
+      renderAdminTable();
+      const input = document.getElementById("railwayApiInput");
+      if (input) input.value = getRailwayApiUrl();
+      document.getElementById("adminDatabaseModal").classList.add("active");
+      document.body.style.overflow = "hidden";
+    }
+
+    function renderAdminTable() {
+      const leads = getStoredLeads();
+      const tbody = document.getElementById("adminTableBody");
+      if (!tbody) return;
+
+      document.getElementById("adminTotalLeads").innerText = leads.length;
+      document.getElementById("adminLastUpdated").innerText = new Date().toLocaleTimeString('vi-VN');
+
+      if (leads.length === 0) {
+        tbody.innerHTML = `<tr><td colspan="7" style="text-align:center; padding: 24px; color: var(--text-muted);">Chưa có yêu cầu tư vấn nào được lưu.</td></tr>`;
+        return;
+      }
+
+      tbody.innerHTML = leads.map(l => {
+        const timeStr = l.createdAt ? new Date(l.createdAt).toLocaleDateString('vi-VN') : 'Mới';
+        return `
+          <tr>
+            <td><strong>${l.id || 'N/A'}</strong></td>
+            <td><strong>${l.fullName}</strong></td>
+            <td>${l.company || '-'}</td>
+            <td><a href="tel:${l.phone}" style="color: var(--color-primary); font-weight:700;">${l.phone}</a></td>
+            <td>${l.course || 'Tư vấn chung'}</td>
+            <td>${timeStr}</td>
+            <td><span class="status-badge ${l.status === 'Đã liên hệ' ? 'status-contacted' : 'status-new'}">${l.status || 'Chờ tư vấn'}</span></td>
+          </tr>
+        `;
+      }).join('');
+    }
+
+    // DOWNLOAD DATABASE.JSON FOR GITHUB REPOSITORY
+    function downloadDatabaseJson() {
+      const leads = getStoredLeads();
+      const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(leads, null, 2));
+      const downloadAnchor = document.createElement("a");
+      downloadAnchor.setAttribute("href", dataStr);
+      downloadAnchor.setAttribute("download", "database.json");
+      document.body.appendChild(downloadAnchor);
+      downloadAnchor.click();
+      downloadAnchor.remove();
+      showToast("Đã tải database.json!", "Bạn có thể kéo thả file này vào GitHub repository để cập nhật cơ sở dữ liệu.");
+    }
+
+    // DOWNLOAD LEADS CSV / EXCEL
+    function downloadLeadsCsv() {
+      const leads = getStoredLeads();
+      if (leads.length === 0) {
+        alert("Hiện chưa có dữ liệu khách hàng nào để xuất.");
+        return;
+      }
+
+      // Add BOM for proper UTF-8 Vietnamese display in Excel
+      let csvContent = "\uFEFFMã Lead,Họ và Tên,Doanh Nghiệp,Số Điện Thoại,Email,Khóa Học Quan Tâm,Nhu Cầu Chi Tiết,Thời Gian Đăng Ký,Trạng Thái\n";
+      
+      leads.forEach(l => {
+        const clean = str => `"${String(str || '').replace(/"/g, '""')}"`;
+        const row = [
+          clean(l.id),
+          clean(l.fullName),
+          clean(l.company),
+          clean(l.phone),
+          clean(l.email),
+          clean(l.course),
+          clean(l.notes),
+          clean(l.createdAt),
+          clean(l.status)
+        ];
+        csvContent += row.join(",") + "\n";
+      });
+
+      const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.setAttribute("href", url);
+      link.setAttribute("download", `LMT_Training_Leads_${new Date().toISOString().slice(0, 10)}.csv`);
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+      showToast("Đã xuất file Excel / CSV!", "File đã được tải về máy của bạn.");
+    }
+
+    function loadSampleLeads() {
+      saveStoredLeads(DEFAULT_LEADS);
+      renderAdminTable();
+      showToast("Đã nạp dữ liệu mẫu!", "3 lead tư vấn mẫu đã được phục hồi vào bộ nhớ.");
+    }
+
+    function clearAllLeads() {
+      if (confirm("Bạn có chắc chắn muốn xóa toàn bộ danh sách lead trong bộ nhớ trình duyệt?")) {
+        saveStoredLeads([]);
+        renderAdminTable();
+        showToast("Đã xóa dữ liệu!", "Bộ nhớ trình duyệt đã được đặt lại rỗng.");
+      }
+    }
+
+    // RAILWAY API URL HANDLING
+    function getRailwayApiUrl() {
+      return localStorage.getItem("LMT_RAILWAY_API_URL") || (window.location.origin.includes("railway.app") ? `${window.location.origin}/api/leads` : "");
+    }
+
+    function saveRailwayApiUrl(val) {
+      localStorage.setItem("LMT_RAILWAY_API_URL", val.trim());
+    }
+
+    async function testRailwayApiConnection() {
+      const url = getRailwayApiUrl();
+      if (!url) {
+        alert("Vui lòng nhập đường link API Railway (Ví dụ: https://lmt-training.up.railway.app/api/leads)");
+        return;
+      }
+      try {
+        const res = await fetch(url.replace('/leads', '/health'));
+        if (res.ok) {
+          const data = await res.json();
+          alert(`✅ Kết nối thành công đến Railway Cloud!\nTrạng thái: ${data.status}\nThời gian: ${data.timestamp}`);
+          document.getElementById("adminStorageStatus").innerText = "Đã kết nối Railway Cloud";
+        } else {
+          alert(`⚠️ Đã kết nối nhưng máy chủ trả về mã lỗi: ${res.status}`);
+        }
+      } catch (err) {
+        alert(`❌ Không thể kết nối tới URL: ${url}\nVui lòng kiểm tra lại domain Railway của bạn.`);
+      }
+    }
+
+    /* ==========================================================================
+       TOAST DISPLAY HELPER
+       ========================================================================== */
+    function showToast(title, desc) {
+      const toast = document.getElementById("toastNotification");
+      document.getElementById("toastTitle").innerText = title;
+      document.getElementById("toastDesc").innerText = desc;
+      toast.classList.add("show");
+      setTimeout(() => {
+        toast.classList.remove("show");
+      }, 4200);
+    }
+
+    /* ==========================================================================
+       WINDOW SCROLL & INIT
+       ========================================================================== */
+    window.addEventListener("scroll", () => {
+      const header = document.getElementById("siteHeader");
+      if (window.scrollY > 40) {
+        header.classList.add("scrolled");
+      } else {
+        header.classList.remove("scrolled");
+      }
+    });
+
+    document.addEventListener("DOMContentLoaded", () => {
+      renderCourses(COURSES_DATA);
+      renderBlogArticles();
+      initEstimatorChecklist();
+      updateBadgeCounts();
+
+      // Check if running on Railway and update status
+      if (window.location.origin.includes("railway.app")) {
+        const statusEl = document.getElementById("adminStorageStatus");
+        if (statusEl) statusEl.innerText = "Chạy Trực Tiếp Trên Railway ☁️";
+      }
+    });
+  </script>
+</body>
+</html>
